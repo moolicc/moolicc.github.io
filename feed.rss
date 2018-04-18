@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+	<channel>
+		<title>IcecreamBurglar's Blog</title>
+		<link>http://host.com/</link>
+		<description>Publications of IcecreamBurglar's shenanigans</description>
+		<copyright>2018</copyright>
+		<pubDate>Wed, 18 Apr 2018 07:57:22 GMT</pubDate>
+		<lastBuildDate>Wed, 18 Apr 2018 07:57:22 GMT</lastBuildDate>
+		<item>
+			<title>First Post</title>
+			<link>http://host.com/blog/2018/04/first-post</link>
+			<description>&lt;p&gt;This is my first post!&lt;/p&gt;</description>
+			<enclosure url="http://host.com/banner.jpg" length="0" type="image" />
+			<guid>http://host.com/blog/2018/04/first-post</guid>
+			<pubDate>Mon, 16 Apr 2018 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;p&gt;This is my first post!&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-cs"&gt;static int Main(string[] args)
+{
+    Console.WriteLine(&amp;quot;Hello, World!&amp;quot;);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class="language-rust"&gt;fn main() {
+    println!(&amp;quot;Hello, World!&amp;quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class="language-fsharp"&gt;open System
+
+[&amp;lt;EntryPoint&amp;gt;]
+let main argv = 
+    printfn &amp;quot;Hello, World!&amp;quot; 
+    Console.ReadLine() |&amp;gt; ignore
+    0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Currently playing around with the &lt;a href="https://wyam.io/"&gt;Wyam&lt;/a&gt; static site generator.&lt;/p&gt;
+</content:encoded>
+		</item>
+	</channel>
+</rss>
