@@ -3,7 +3,7 @@
 
 var RootDir = MakeAbsolute(Directory(".")); 
 var buildtarget = Argument("target", "Default");
-var waymexe = RootDir + "/tools/wyam/Wyam/tools/net462/Wyam.exe";
+var waymexe = "wyam"; //RootDir + "/tools/wyam/Wyam/tools/net462/Wyam.exe";
 
 Task("Build")
     .Does(() => StartProcess(waymexe, "build"));
