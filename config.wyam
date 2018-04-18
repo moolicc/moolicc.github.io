@@ -1,0 +1,18 @@
+#recipe Blog
+
+// Customize your settings and add new ones here
+Settings[Keys.Host] = "host.com";
+Settings[BlogKeys.Title] = "IcecreamBurglar's Blog";
+Settings[BlogKeys.Description] = "Greetings, fellow Human.";
+
+Settings[BlogKeys.ArchiveExcerpts] = false;
+Settings[BlogKeys.ArchivePageSize] = 20;
+Settings[BlogKeys.Description] = "Publications of IcecreamBurglar's shenanigans";
+Settings[BlogKeys.Image] = "/banner.jpg";
+Settings[BlogKeys.IncludeDateInPostPath] = true;
+Settings[BlogKeys.IndexPageSize] = 5;
+Settings[BlogKeys.Intro] = "You have entered the realm of IcecreamBurglar's blog; a collection of misdemeanors in software development.";
+Settings[BlogKeys.PostsPath] = "blog";
+
+
+// Add any pipeline customizations here
