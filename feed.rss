@@ -5,14 +5,14 @@
 		<link>http://host.com/</link>
 		<description>Publications of IcecreamBurglar's shenanigans</description>
 		<copyright>2018</copyright>
-		<pubDate>Wed, 18 Apr 2018 07:57:22 GMT</pubDate>
-		<lastBuildDate>Wed, 18 Apr 2018 07:57:22 GMT</lastBuildDate>
+		<pubDate>Fri, 20 Apr 2018 19:57:46 GMT</pubDate>
+		<lastBuildDate>Fri, 20 Apr 2018 19:57:46 GMT</lastBuildDate>
 		<item>
 			<title>First Post</title>
-			<link>http://host.com/blog/2018/04/first-post</link>
+			<link>http://host.com/blog/first-post</link>
 			<description>&lt;p&gt;This is my first post!&lt;/p&gt;</description>
 			<enclosure url="http://host.com/banner.jpg" length="0" type="image" />
-			<guid>http://host.com/blog/2018/04/first-post</guid>
+			<guid>http://host.com/blog/first-post</guid>
 			<pubDate>Mon, 16 Apr 2018 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;p&gt;This is my first post!&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-cs"&gt;static int Main(string[] args)

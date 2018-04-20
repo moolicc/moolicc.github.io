@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 
-        <title>IcecreamBurglar&#x27;s Blog - Archive</title>
+        <title>IcecreamBurglar&#x27;s Blog - First Post</title>
         <meta name="description" content="Publications of IcecreamBurglar&#x27;s shenanigans" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
@@ -28,9 +28,9 @@
         <meta name="msapplication-tooltip" content="IcecreamBurglar&#x27;s Blog" />
         <meta name="msapplication-starturl" content="/" />
 
-        <meta property="og:title" content="IcecreamBurglar&#x27;s Blog - Archive" />
+        <meta property="og:title" content="IcecreamBurglar&#x27;s Blog - First Post" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://host.com/blog" />
+        <meta property="og:url" content="http://host.com/blog/first-post" />
         <!-- TODO: More social graph meta tags -->
 
         <script src="/assets/js/jquery.min.js"></script>
@@ -88,9 +88,18 @@
                         <div class="container">
                                 <div class="row">
                                         <div class="col-md-12">
-<div class="site-heading">
-    <h1>Archive</h1>
-</div>                                            </div>
+
+    
+<div class="post-heading">
+    <h1>First Post</h1>
+        <h2 class="subheading">Obligatory &quot;Hello World&quot; post.</h2>
+    <div class="meta">        
+Published on Monday, April 16, 2018<br>    </div>
+        <div class="tags">
+                    <a role="button" href="/tags/Introduction" class="btn btn-default btn-xs">Introduction</a>
+        </div>     
+</div>
+                                        </div>
                                 </div>
                         </div>
                 </header>
@@ -100,21 +109,29 @@
                         <div class="row">
                                 <div id="content" class="col-md-12">
                                         
-        <h1>2018</h1>
-        <hr />
-        <div class="post-list">
-            <a href="/blog/first-post">
-                <h3 class="post-title">First Post</h3>
-                    <h4 class="post-subtitle">Obligatory &quot;Hello World&quot; post.</h4>
-            </a>
-            <p class="post-meta">Posted on Monday, April 16, 2018</p>      
-        </div>   
-    <ul class="pager">
-        <li class="previous">                
-        </li>
-        <li class="next">
-        </li>
-    </ul>
+
+<p>This is my first post!</p>
+<pre><code class="language-cs">static int Main(string[] args)
+{
+    Console.WriteLine(&quot;Hello, World!&quot;);
+    return 0;
+}
+</code></pre>
+<pre><code class="language-rust">fn main() {
+    println!(&quot;Hello, World!&quot;);
+}
+</code></pre>
+<pre><code class="language-fsharp">open System
+
+[&lt;EntryPoint&gt;]
+let main argv = 
+    printfn &quot;Hello, World!&quot; 
+    Console.ReadLine() |&gt; ignore
+    0
+</code></pre>
+<p>Currently playing around with the <a href="https://wyam.io/">Wyam</a> static site generator.</p>
+
+
 
                                 </div>
                         </div>
