@@ -16,3 +16,5 @@ Though currently I am trying to broaden my fluidity in other languages, such as:
   I also, however, have a Dell Inspiron 7000, and various Toshiba Satellite laptops from the 2008-2011 time-frame.
   
   Additionally, I enjoy tinkering with Arduinos and RaspberryPis, though I've not finished any significant project on either platform.
+  
+  ### And finally, I strongly believe coffee is an evil virus and should be exterminated from this world. Therefore, I tend to expend as much coffee as I possibly can.

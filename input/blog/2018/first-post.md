@@ -1,4 +1,5 @@
 Title: First Post
+Lead: Obligatory "Hello World" post.
 Published: 4/16/2018
 Tags: Introduction
 ---

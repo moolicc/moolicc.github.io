@@ -9,9 +9,9 @@ Settings[BlogKeys.ArchiveExcerpts] = false;
 Settings[BlogKeys.ArchivePageSize] = 20;
 Settings[BlogKeys.Description] = "Publications of IcecreamBurglar's shenanigans";
 Settings[BlogKeys.Image] = "/banner.jpg";
-Settings[BlogKeys.IncludeDateInPostPath] = true;
+Settings[BlogKeys.IncludeDateInPostPath] = false;
 Settings[BlogKeys.IndexPageSize] = 5;
-Settings[BlogKeys.Intro] = "You have entered the realm of IcecreamBurglar's blog; a collection of misdemeanors in software development.";
+Settings[BlogKeys.Intro] = "You have entered the realm of IcecreamBurglar's blog; a collection of misdemeanors in software development. Also I expend a lot of coffee while doing this, so sorry about the rising cost of that.";
 Settings[BlogKeys.PostsPath] = "blog";
 
 
