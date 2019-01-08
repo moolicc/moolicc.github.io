@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-	<link rel="self" href="http://host.com/" />
 	<id>http://host.com/</id>
 	<title>IcecreamBurglar's Blog</title>
-	<rights>2018</rights>
-	<updated>2018-04-20T20:04:31Z</updated>
+	<link rel="self" href="http://host.com/" />
+	<rights>2019</rights>
+	<updated>2019-01-08T02:21:42Z</updated>
 	<logo>http://host.com/banner.jpg</logo>
 	<subtitle>Publications of IcecreamBurglar's shenanigans</subtitle>
 	<entry>
-		<link href="http://host.com/blog/first-post" />
-		<link rel="enclosure" type="image" href="http://host.com/banner.jpg" />
 		<id>http://host.com/blog/first-post</id>
 		<title>First Post</title>
+		<link href="http://host.com/blog/first-post" />
+		<link rel="enclosure" type="image" href="http://host.com/banner.jpg" />
 		<updated>2018-04-16T00:00:00Z</updated>
 		<content>&lt;p&gt;This is my first post!&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-cs"&gt;static int Main(string[] args)
