@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 
-        <title>JMikeW&#x27;s Writings - About Me</title>
+        <title>JMikeW&#x27;s Writings - My (non-exhaustive) List of Projects for New Languages</title>
         <meta name="description" content="JMikeW&#x27;s Writings" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
@@ -28,9 +28,9 @@
         <meta name="msapplication-tooltip" content="JMikeW&#x27;s Writings" />
         <meta name="msapplication-starturl" content="/" />
 
-        <meta property="og:title" content="JMikeW&#x27;s Writings - About Me" />
+        <meta property="og:title" content="JMikeW&#x27;s Writings - My (non-exhaustive) List of Projects for New Languages" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://icecreamburglar.blog/about" />
+        <meta property="og:url" content="http://icecreamburglar.blog/blog/project-list" />
         <!-- TODO: More social graph meta tags -->
 
         <script src="/assets/js/jquery.min.js"></script>
@@ -88,9 +88,19 @@
                         <div class="container">
                                 <div class="row">
                                         <div class="col-md-12">
-<div class="site-heading">
-    <h1>About Me</h1>
-</div>                                            </div>
+
+    
+<div class="post-heading">
+    <h1>My (non-exhaustive) List of Projects for New Languages</h1>
+        <h2 class="subheading">A list of projects to complete in various language as exercise.</h2>
+    <div class="meta">        
+Published on Saturday, April 28, 2018<br>    </div>
+        <div class="tags">
+                    <a role="button" href="/tags/Language-Learning" class="btn btn-default btn-xs">Language Learning</a>
+                    <a role="button" href="/tags/Projects" class="btn btn-default btn-xs">Projects</a>
+        </div>     
+</div>
+                                        </div>
                                 </div>
                         </div>
                 </header>
@@ -99,22 +109,83 @@
                 <div class="container">
                         <div class="row">
                                 <div id="content" class="col-md-12">
-                                        <p>I'm a hobbyist programmer, mostly spending time in c#.
-Though currently I am trying to broaden my fluidity in other languages, such as:</p>
-<ul>
-<li>F#</li>
-<li>Haskell</li>
-<li>Python</li>
-<li>Rust</li>
-<li>Assembly (arm)</li>
-</ul>
-<p>I've been programming for the last 10 years now.
-I started in vb.net and Visual Studio 2008.
-A few years later I moved to C# and never looked back to VB.</p>
-<p>I primarily use one-of-two OSes on a dual-booted system, running Windows 10 and Linux Manjaro.
-I also, however, have a Dell Inspiron 7000, and various Toshiba Satellite laptops from the 2008-2011 time-frame.</p>
-<p>Additionally, I enjoy tinkering with Arduinos and RaspberryPis, though I've not finished any significant project on either platform.</p>
-<h3 id="and-finally-i-strongly-believe-coffee-is-an-evil-virus-and-should-be-exterminated-from-this-world.therefore-i-tend-to-expend-as-much-coffee-as-i-possibly-can">And finally, I strongly believe coffee is an evil virus and should be exterminated from this world. Therefore, I tend to expend as much coffee as I possibly can.</h3>
+                                        
+
+<p>This is a non-exhaustive list of projects that I can complete as exercise for learning new languages.
+Some of this was gleaned from <a href="https://github.com/karan/Projects">this list</a>, and some of it wasn't.</p>
+<p>I'll update this with links to every implementation of any given project I do in any given language.</p>
+<h1 id="projects">Projects</h1>
+<h2 id="battleship">Battleship</h2>
+<p>The classic board game in ASCII against a very simple AI.</p>
+<h2 id="bubblesort">Bubblesort</h2>
+<p>Just implement bubblesort.</p>
+<h2 id="budget-tracker">Budget Tracker</h2>
+<p>Create an app that will aid in finances.
+It should keep track of monthly income, and expenses.
+The user should be able to input an amount of money, expressed as a percent, of the net monthly income to put in savings.
+Finally, the app should inform the user how much they can spend on a weekly basis.</p>
+<h2 id="caesar-cipher">Caesar Cipher</h2>
+<p>I think everybody probably knows what this guy is.
+Here's a <a href="https://en.wikipedia.org/wiki/Caesar_cipher">Wiki Link</a> to it just in case.</p>
+<h2 id="change-finder">Change Finder</h2>
+<p>Implement a change finder. But instead of printing out the change as a number, we should print out the exact amount of tender we need.
+Example:</p>
+<pre><code>Enter cost:
+-&gt; 10
+Enter amount payed:
+-&gt; 10.31
+
+Change: $0.31; 1 quarter, 1 nickel, and 1 penny.
+</code></pre>
+<h2 id="code-snippet-manager">Code Snippet Manager</h2>
+<p>Create a code snippet manager.</p>
+<h2 id="command-script">Command Script</h2>
+<p>A simple scripting language which is command driven. So basically a DSL.
+Example:</p>
+<pre><code>var(hello, &quot;Hello, World!&quot;)
+var(num, 0)
+
+LOOP
+if(num == 3, END)
+add(num, 1)
+goto LOOP
+
+END
+print(That was fun!)
+</code></pre>
+<h2 id="diffie-hellman-key-generation">Diffie-Hellman Key Generation</h2>
+<p>Implement the Diffie-Hellman key generation algorithm.
+See <a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">Wikipedia</a></p>
+<h2 id="dungeon-crawler">Dungeon-Crawler</h2>
+<p>Create a dungeon-crawler using ASCII graphics.
+It should be able to randomly generate dungeons.
+Difficulty should progress.</p>
+<h2 id="gofish">Gofish</h2>
+<p>Implement the (card) game of <em>GoFish</em> in ASCII, and allow the user to play against the computer.</p>
+<h2 id="gpa-calculator">GPA Calculator</h2>
+<p>Given a set of input grades, calculate a GPA.</p>
+<h2 id="hash-generator">Hash generator</h2>
+<p>Implement a hashcode generator.</p>
+<h2 id="ip-locater">IP Locater</h2>
+<p>Roughly resolve an IP Address's physical location.</p>
+<h2 id="number-guessing-game">Number Guessing Game</h2>
+<p>The program randomly selects a number from 0 - 100 and the user must guess what that number is. Whenever the user is wrong, the computer tells them if their guess was too low or too high. Bonus points if we make it work the other way where the user picks the number and the computer guesses it.</p>
+<h2 id="pig-latin-translator">Pig Latin Translator</h2>
+<p>Implement a <a href="https://en.wikipedia.org/wiki/Pig_Latin">Pig Latin</a> translator capable of going either <code>English -&gt; Pig Latin</code> or <code>Pig Latin -&gt; English</code>.</p>
+<h2 id="rss-feed-analyzer">RSS Feed Analyzer</h2>
+<p>Allow the user to enter in the URL for an RSS feed.
+Then analyze the feed and pretty-print the results.</p>
+<h2 id="sieve-of-eratosthenes">Sieve of Eratosthenes</h2>
+<p>Find all prime numbers up to a user-defined point.
+See: <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Wikipedia</a></p>
+<h2 id="tcp-clientserver-messaging">TCP Client/Server Messaging</h2>
+<p>A simple program which allows users to chat with each other over a TCP connection. Bonus points if the users can create different chat rooms. Also encryption would be a nice bonus.</p>
+<h2 id="text-based-adventure-game">Text-based Adventure Game</h2>
+<p>Create a little text-based adventure game.</p>
+<h2 id="zip">Zip</h2>
+<p>Implement an algorithm for zipping/unzipping data/files.</p>
+
+
 
                                 </div>
                         </div>
