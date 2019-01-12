@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 
-        <title>JMikeW&#x27;s Writings</title>
+        <title>JMikeW&#x27;s Writings - Creating an Entity Component System in c# - Revisit</title>
         <meta name="description" content="JMikeW&#x27;s Writings" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
@@ -28,9 +28,9 @@
         <meta name="msapplication-tooltip" content="JMikeW&#x27;s Writings" />
         <meta name="msapplication-starturl" content="/" />
 
-        <meta property="og:title" content="JMikeW&#x27;s Writings" />
+        <meta property="og:title" content="JMikeW&#x27;s Writings - Creating an Entity Component System in c# - Revisit" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://icecreamburglar.blog/" />
+        <meta property="og:url" content="http://icecreamburglar.blog/blog/entity-component-system-part4" />
         <!-- TODO: More social graph meta tags -->
 
         <script src="/assets/js/jquery.min.js"></script>
@@ -89,10 +89,18 @@
                                 <div class="row">
                                         <div class="col-md-12">
 
-    <div class="site-heading">
-        <h1>JMikeW&#x27;s Writings</h1>
-                <hr class="small">
-        <span class="subheading">This is JMikeW&#x27;s realm; a collection of misdemeanors in software development. Also I expend a lot of coffee while doing this, so sorry about the rising cost of that.</span>
+    
+<div class="post-heading">
+    <h1>Creating an Entity Component System in c# - Revisit</h1>
+        <h2 class="subheading">We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;In this post, we&#x27;ll throw all the previous posts away and actually write an ECS skeleton.&#xA;</h2>
+    <div class="meta">        
+Published on Saturday, January 12, 2019<br>    </div>
+        <div class="tags">
+                    <a role="button" href="/tags/C%23" class="btn btn-default btn-xs">C#</a>
+                    <a role="button" href="/tags/Design-Pattern" class="btn btn-default btn-xs">Design Pattern</a>
+                    <a role="button" href="/tags/Game-Development" class="btn btn-default btn-xs">Game Development</a>
+                    <a role="button" href="/tags/MonoGame" class="btn btn-default btn-xs">MonoGame</a>
+        </div>     
 </div>
                                         </div>
                                 </div>
@@ -104,14 +112,7 @@
                         <div class="row">
                                 <div id="content" class="col-md-12">
                                         
-<div class="row">
-    <div class="col-sm-8 right-border">
-                <div class="post-preview">
-                    <a href="/blog/entity-component-system-part4">
-                        <h2 class="post-title">Creating an Entity Component System in c# - Revisit</h2>
-                            <h3 class="post-subtitle">We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;In this post, we&#x27;ll throw all the previous posts away and actually write an ECS skeleton.&#xA;</h3>
-                    </a>
-                    <p class="post-meta">Posted on Saturday, January 12, 2019</p>
+
 <h1 id="revisit">Revisit</h1>
 <p>Clear your mind of what you've read here from previous posts in this overly long-winded series.
 Shortly after I wrote the last post, I realized that some of the stuff I said was not entirely correct.
@@ -456,76 +457,9 @@ The Entity Component System is a fantastic tool to have on your belt, and honest
 Writing one up can be kind of boiler-plate, but I find it fun to try and make it unique and at least some-what performance friendly.</p>
 <p>I've thrown the full code up on my <a href="https://github.com/jmikew/hourglass">github</a>.
 So please, go poke around, have some fun, and let me know how it goes!</p>
-                </div>       
-        <ul class="pager">
-            <li class="previous">                
-            </li>
-            <li class="next">
-            </li>
-        </ul>
-    </div>
-    <div class="col-sm-4 sidebar">
-        <hr class="visible-xs-block" />
 
-            <h5>Tags</h5>
-            <div>
-                    <a role="button" href="/tags/MonoGame" class="btn btn-default btn-sm"> MonoGame (4)</a>
-                    <a role="button" href="/tags/C%23" class="btn btn-default btn-sm"> C# (4)</a>
-                    <a role="button" href="/tags/Game-Development" class="btn btn-default btn-sm"> Game Development (4)</a>
-                    <a role="button" href="/tags/Design-Pattern" class="btn btn-default btn-sm"> Design Pattern (4)</a>
-                    <a role="button" href="/tags/Introduction" class="btn btn-default btn-sm"> Introduction (1)</a>
-                    <a role="button" href="/tags/Language-Learning" class="btn btn-default btn-sm"> Language Learning (1)</a>
-                    <a role="button" href="/tags/Projects" class="btn btn-default btn-sm"> Projects (1)</a>
-            </div>
-            <ul class="pager">
-                <li class="next">
-                    <a href="/tags">View All Tags &rarr;</a>
-                </li>
-            </ul>
 
-            <hr />
-            <h5>Older Posts</h5>
-            <ul class="list-unstyled">
-                    <li>
-                        <a href="/blog/entity-component-system-part3" title="We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;In this post, we&#x27;ll optimize the entire thing so that it is not  hor&#xB7;ren&#xB7;dous&#xB7;ly overweight.&#xA;">Creating an Entity Component System in c# - Part 3 (6/20/2018)
-                        <p style="margin-top:0em;margin-bottom:-1em;font-size:16px;">└ We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;In this post, we&#x27;ll optimize the entire thing so that it is not  hor&#xB7;ren&#xB7;dous&#xB7;ly overweight.&#xA;</p>
-                        </a>
-                    </li>
-                    <br>
-                    <li>
-                        <a href="/blog/entity-component-system-part2" title="We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;In this post, we&#x27;ll talk about the EntityManager.&#xA;">Creating an Entity Component System in c# - Part 2 (5/13/2018)
-                        <p style="margin-top:0em;margin-bottom:-1em;font-size:16px;">└ We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;In this post, we&#x27;ll talk about the EntityManager.&#xA;</p>
-                        </a>
-                    </li>
-                    <br>
-                    <li>
-                        <a href="/blog/entity-component-system-part1" title="We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;We&#x27;ll start off the series by laying the groundwork for our ECS implementation.&#xA;">Creating an Entity Component System in c# - Part 1 (5/5/2018)
-                        <p style="margin-top:0em;margin-bottom:-1em;font-size:16px;">└ We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;We&#x27;ll start off the series by laying the groundwork for our ECS implementation.&#xA;</p>
-                        </a>
-                    </li>
-                    <br>
-                    <li>
-                        <a href="/blog/project-list" title="A list of projects to complete in various language as exercise.">My (non-exhaustive) List of Projects for New Languages (4/28/2018)
-                        <p style="margin-top:0em;margin-bottom:-1em;font-size:16px;">└ A list of projects to complete in various language as exercise.</p>
-                        </a>
-                    </li>
-                    <br>
-                    <li>
-                        <a href="/blog/first-post" title="Obligatory &quot;Hello World&quot; post.">First Post (4/16/2018)
-                        <p style="margin-top:0em;margin-bottom:-1em;font-size:16px;">└ Obligatory &quot;Hello World&quot; post.</p>
-                        </a>
-                    </li>
-                    <br>
-            </ul>
-                <ul class="pager">
-                    <li class="next">
-                        <a href="/blog">View All Posts &rarr;</a>
-                    </li>
-                </ul>
 
-        
-    </div> 
-</div>
                                 </div>
                         </div>
                 </div>
