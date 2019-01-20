@@ -149,7 +149,7 @@ Proxy(&quot;Height&quot;, &quot;Bounds.Height&quot;)
 <p>We'll use this list to store <em>all</em> of our components for <em>all</em> of our entities.
 So the question may arise; &quot;How does one actually distinguish which components belong to which entities?&quot; The answer is actually fairly easy. We'll index where each entity's component list starts, and place this index at the start of our list. We'll access our index via <em>entity IDs</em>, that themselves represent indices, but this time, into our index.</p>
 <p>Here's a <strong>very, very rough</strong> depiction of how our collection will store our things for us.
-<img src="/resources/blog/entity-component-system-part3/roughecs.PNG" class="img-fluid" alt="rough-ecs" /></p>
+<img src="/assets/blog/entity-component-system-part3/roughecs.PNG" class="img-fluid" alt="rough-ecs" /></p>
 <h2 id="why-not-use-a-list-of-some-custom-entity-class">Why Not Use A List of Some Custom 'Entity' Class?</h2>
 <p>There is actually a reason (or two) for this.</p>
 <h3 id="the-first-being-cache-misses">The first being cache-misses.</h3>

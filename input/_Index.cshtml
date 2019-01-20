@@ -25,12 +25,13 @@
                     <p class="post-meta">Posted on @(post.Get<DateTime>(BlogKeys.Published).ToLongDateString(Context))</p>
                     @if(Context.Bool(BlogKeys.IndexFullPosts))
                     {
+                        <hr>
                         @Html.Raw(post.Content)
                     }
                     else
                     {
                         @Html.Raw(post.String(BlogKeys.Excerpt))
-                    }             
+                    }
                 </div>       
             }
         }
@@ -82,13 +83,16 @@
                     // TODO: The skip above needs to line up with the number of posts on the index page
                     // Also turn this section off if the index is paged
                     string text = post.WithoutSettings.String(BlogKeys.Title) + " (" + post.Get<DateTime>(BlogKeys.Published).ToShortDateString(Context) + ")";
-                    string title = post.String(BlogKeys.Lead);
+                    string desc = post.String(BlogKeys.Lead);
                     <li>
-                        <a href="@Context.GetLink(post)" title="@title">@text
-                        <p style="margin-top:0em;margin-bottom:-1em;font-size:16px;">└ @title</p>
-                        </a>
+                        <div class="postrect">
+                            <a href="@Context.GetLink(post)" title="@desc">
+                                <p style="margin-bottom:1em;">@text</p>
+                                <p style="margin-top:0em;margin-bottom:0em;font-size:16px;">@desc</p>
+                            </a>
+                        </div>
                     </li>
-                    <br>
+                    <hr>
                 }
             </ul>
 

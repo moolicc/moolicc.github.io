@@ -5,8 +5,8 @@
 		<link>http://icecreamburglar.blog/</link>
 		<description>JMikeW's Writings</description>
 		<copyright>2019</copyright>
-		<pubDate>Sat, 12 Jan 2019 23:34:17 GMT</pubDate>
-		<lastBuildDate>Sat, 12 Jan 2019 23:34:17 GMT</lastBuildDate>
+		<pubDate>Sun, 20 Jan 2019 06:33:33 GMT</pubDate>
+		<lastBuildDate>Sun, 20 Jan 2019 06:33:33 GMT</lastBuildDate>
 		<item>
 			<title>Creating an Entity Component System in c# - Revisit</title>
 			<link>http://icecreamburglar.blog/blog/entity-component-system-part4</link>
@@ -38,7 +38,7 @@ This brings us to our first point.&lt;/p&gt;
 &lt;p&gt;Here's a little something I drew-up to hopefully help visualize. It also might be too hard to see, I'm one of the unlucky folks who doesn't have 20 cameras
 on my phone to take clear pictures.
 Where &lt;em&gt;E&lt;/em&gt; is our list of entities.&lt;/p&gt;
-&lt;p&gt;&lt;img src="/resources/blog/entity-component-system-part4/ecs.jpg" class="img-fluid" alt="rough-ecs" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/assets/blog/entity-component-system-part4/ecs.jpg" class="img-fluid" alt="rough-ecs" /&gt;&lt;/p&gt;
 &lt;p&gt;Note that the code itself might not fully conform to these terms. Hopefully, it'll be concise enough to not even matter though.&lt;/p&gt;
 &lt;h1 id="storing-numerical-ids-without-boxing"&gt;Storing Numerical IDs Without Boxing&lt;/h1&gt;
 &lt;p&gt;OK, so the title of this paragraph is a tad misleading. We'll in actuality be abstracting both entity indices and components, but this time we'll do so
@@ -48,8 +48,8 @@ The EntityItem type contains most importantly, two fields. One of type Component
 &lt;p&gt;It's probably worth noting that all of these are literally &lt;strong&gt;fields&lt;/strong&gt; and not &lt;strong&gt;properties.&lt;/strong&gt;. The purpose of this
 is that fields are stored as &lt;em&gt;references&lt;/em&gt; and properties behave more like &lt;em&gt;values&lt;/em&gt; (properties are a tad more complicated than that as they really
 just wrap around private fields themselves anyway). This is important because if our Component field was accessed like a value, then changes made to
-the component in the code that consumes are ECS wouldn't modify the actual component we're storing, but in essence a copy of it.&lt;/p&gt;
-&lt;p&gt;Additionally, I've thrown in a couple of constructor overloads to make instantiating this struct more convinient.
+the component in the code that consumes are ECS wouldn't modify the actual component we're storing, but in essence a copy of it.
+Additionally, I've thrown in a couple of constructor overloads to make instantiating this struct more convinient.
 &lt;code&gt;public EntityItem(int entityIndex)&lt;/code&gt; and &lt;code&gt;public EntityItem(ComponentBase component)&lt;/code&gt;. Though both of these just call into an
 private constructor that looks like &lt;code&gt;private EntityItem(int entityIndex, ComponentBase component)&lt;/code&gt; that sets everything up for us.&lt;/p&gt;
 &lt;h1 id="the-entity-manager"&gt;The Entity Manager&lt;/h1&gt;
@@ -175,7 +175,7 @@ without them being aware. &lt;em&gt;We'll unfortunately have to do this until th
 &lt;h4 id="destroying-an-entity"&gt;Destroying an entity&lt;/h4&gt;
 &lt;p&gt;Next up, we should take a look at the case where a caller might be a monster and desire the destruction of an entity.
 So I guess we should also include a method of the removal of entities.&lt;/p&gt;
-&lt;aside&gt;I actually forgot to implement this until writing this post. Before this time, entities overpopulated the world, causing mass-chaos.&lt;/aside&gt;
+&lt;aside&gt;😬&lt;br&gt;I actually forgot to implement this until writing this post. Before this time, entities overpopulated the world, causing mass-chaos.&lt;/aside&gt;
 &lt;pre&gt;&lt;code class="language-cs"&gt;public void DestroyEntity(int entityId)
 {
   //Sanity check to make sure the passed entityId is valid.
@@ -407,7 +407,7 @@ Proxy(&amp;quot;Height&amp;quot;, &amp;quot;Bounds.Height&amp;quot;)
 &lt;p&gt;We'll use this list to store &lt;em&gt;all&lt;/em&gt; of our components for &lt;em&gt;all&lt;/em&gt; of our entities.
 So the question may arise; &amp;quot;How does one actually distinguish which components belong to which entities?&amp;quot; The answer is actually fairly easy. We'll index where each entity's component list starts, and place this index at the start of our list. We'll access our index via &lt;em&gt;entity IDs&lt;/em&gt;, that themselves represent indices, but this time, into our index.&lt;/p&gt;
 &lt;p&gt;Here's a &lt;strong&gt;very, very rough&lt;/strong&gt; depiction of how our collection will store our things for us.
-&lt;img src="/resources/blog/entity-component-system-part3/roughecs.PNG" class="img-fluid" alt="rough-ecs" /&gt;&lt;/p&gt;
+&lt;img src="/assets/blog/entity-component-system-part3/roughecs.PNG" class="img-fluid" alt="rough-ecs" /&gt;&lt;/p&gt;
 &lt;h2 id="why-not-use-a-list-of-some-custom-entity-class"&gt;Why Not Use A List of Some Custom 'Entity' Class?&lt;/h2&gt;
 &lt;p&gt;There is actually a reason (or two) for this.&lt;/p&gt;
 &lt;h3 id="the-first-being-cache-misses"&gt;The first being cache-misses.&lt;/h3&gt;

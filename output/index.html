@@ -112,6 +112,7 @@
                             <h3 class="post-subtitle">We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;In this post, we&#x27;ll throw all the previous posts away and actually write an ECS skeleton.&#xA;</h3>
                     </a>
                     <p class="post-meta">Posted on Saturday, January 12, 2019</p>
+                        <hr>
 <h1 id="revisit">Revisit</h1>
 <p>Clear your mind of what you've read here from previous posts in this overly long-winded series.
 Shortly after I wrote the last post, I realized that some of the stuff I said was not entirely correct.
@@ -134,7 +135,7 @@ This brings us to our first point.</p>
 <p>Here's a little something I drew-up to hopefully help visualize. It also might be too hard to see, I'm one of the unlucky folks who doesn't have 20 cameras
 on my phone to take clear pictures.
 Where <em>E</em> is our list of entities.</p>
-<p><img src="/resources/blog/entity-component-system-part4/ecs.jpg" class="img-fluid" alt="rough-ecs" /></p>
+<p><img src="/assets/blog/entity-component-system-part4/ecs.jpg" class="img-fluid" alt="rough-ecs" /></p>
 <p>Note that the code itself might not fully conform to these terms. Hopefully, it'll be concise enough to not even matter though.</p>
 <h1 id="storing-numerical-ids-without-boxing">Storing Numerical IDs Without Boxing</h1>
 <p>OK, so the title of this paragraph is a tad misleading. We'll in actuality be abstracting both entity indices and components, but this time we'll do so
@@ -144,8 +145,8 @@ The EntityItem type contains most importantly, two fields. One of type Component
 <p>It's probably worth noting that all of these are literally <strong>fields</strong> and not <strong>properties.</strong>. The purpose of this
 is that fields are stored as <em>references</em> and properties behave more like <em>values</em> (properties are a tad more complicated than that as they really
 just wrap around private fields themselves anyway). This is important because if our Component field was accessed like a value, then changes made to
-the component in the code that consumes are ECS wouldn't modify the actual component we're storing, but in essence a copy of it.</p>
-<p>Additionally, I've thrown in a couple of constructor overloads to make instantiating this struct more convinient.
+the component in the code that consumes are ECS wouldn't modify the actual component we're storing, but in essence a copy of it.
+Additionally, I've thrown in a couple of constructor overloads to make instantiating this struct more convinient.
 <code>public EntityItem(int entityIndex)</code> and <code>public EntityItem(ComponentBase component)</code>. Though both of these just call into an
 private constructor that looks like <code>private EntityItem(int entityIndex, ComponentBase component)</code> that sets everything up for us.</p>
 <h1 id="the-entity-manager">The Entity Manager</h1>
@@ -271,7 +272,7 @@ without them being aware. <em>We'll unfortunately have to do this until the mach
 <h4 id="destroying-an-entity">Destroying an entity</h4>
 <p>Next up, we should take a look at the case where a caller might be a monster and desire the destruction of an entity.
 So I guess we should also include a method of the removal of entities.</p>
-<aside>I actually forgot to implement this until writing this post. Before this time, entities overpopulated the world, causing mass-chaos.</aside>
+<aside>😬<br>I actually forgot to implement this until writing this post. Before this time, entities overpopulated the world, causing mass-chaos.</aside>
 <pre><code class="language-cs">public void DestroyEntity(int entityId)
 {
   //Sanity check to make sure the passed entityId is valid.
@@ -469,13 +470,13 @@ So please, go poke around, have some fun, and let me know how it goes!</p>
 
             <h5>Tags</h5>
             <div>
-                    <a role="button" href="/tags/Design-Pattern" class="btn btn-default btn-sm"> Design Pattern (4)</a>
                     <a role="button" href="/tags/Game-Development" class="btn btn-default btn-sm"> Game Development (4)</a>
-                    <a role="button" href="/tags/C%23" class="btn btn-default btn-sm"> C# (4)</a>
                     <a role="button" href="/tags/MonoGame" class="btn btn-default btn-sm"> MonoGame (4)</a>
+                    <a role="button" href="/tags/C%23" class="btn btn-default btn-sm"> C# (4)</a>
+                    <a role="button" href="/tags/Design-Pattern" class="btn btn-default btn-sm"> Design Pattern (4)</a>
+                    <a role="button" href="/tags/Language-Learning" class="btn btn-default btn-sm"> Language Learning (1)</a>
                     <a role="button" href="/tags/Projects" class="btn btn-default btn-sm"> Projects (1)</a>
                     <a role="button" href="/tags/Introduction" class="btn btn-default btn-sm"> Introduction (1)</a>
-                    <a role="button" href="/tags/Language-Learning" class="btn btn-default btn-sm"> Language Learning (1)</a>
             </div>
             <ul class="pager">
                 <li class="next">
@@ -487,35 +488,50 @@ So please, go poke around, have some fun, and let me know how it goes!</p>
             <h5>Older Posts</h5>
             <ul class="list-unstyled">
                     <li>
-                        <a href="/blog/entity-component-system-part3" title="We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;In this post, we&#x27;ll optimize the entire thing so that it is not  hor&#xB7;ren&#xB7;dous&#xB7;ly overweight.&#xA;">Creating an Entity Component System in c# - Part 3 (6/20/2018)
-                        <p style="margin-top:0em;margin-bottom:-1em;font-size:16px;">└ We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;In this post, we&#x27;ll optimize the entire thing so that it is not  hor&#xB7;ren&#xB7;dous&#xB7;ly overweight.&#xA;</p>
-                        </a>
+                        <div class="postrect">
+                            <a href="/blog/entity-component-system-part3" title="We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;In this post, we&#x27;ll optimize the entire thing so that it is not  hor&#xB7;ren&#xB7;dous&#xB7;ly overweight.&#xA;">
+                                <p style="margin-bottom:1em;">Creating an Entity Component System in c# - Part 3 (6/20/2018)</p>
+                                <p style="margin-top:0em;margin-bottom:0em;font-size:16px;">We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;In this post, we&#x27;ll optimize the entire thing so that it is not  hor&#xB7;ren&#xB7;dous&#xB7;ly overweight.&#xA;</p>
+                            </a>
+                        </div>
                     </li>
-                    <br>
+                    <hr>
                     <li>
-                        <a href="/blog/entity-component-system-part2" title="We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;In this post, we&#x27;ll talk about the EntityManager.&#xA;">Creating an Entity Component System in c# - Part 2 (5/13/2018)
-                        <p style="margin-top:0em;margin-bottom:-1em;font-size:16px;">└ We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;In this post, we&#x27;ll talk about the EntityManager.&#xA;</p>
-                        </a>
+                        <div class="postrect">
+                            <a href="/blog/entity-component-system-part2" title="We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;In this post, we&#x27;ll talk about the EntityManager.&#xA;">
+                                <p style="margin-bottom:1em;">Creating an Entity Component System in c# - Part 2 (5/13/2018)</p>
+                                <p style="margin-top:0em;margin-bottom:0em;font-size:16px;">We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;In this post, we&#x27;ll talk about the EntityManager.&#xA;</p>
+                            </a>
+                        </div>
                     </li>
-                    <br>
+                    <hr>
                     <li>
-                        <a href="/blog/entity-component-system-part1" title="We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;We&#x27;ll start off the series by laying the groundwork for our ECS implementation.&#xA;">Creating an Entity Component System in c# - Part 1 (5/5/2018)
-                        <p style="margin-top:0em;margin-bottom:-1em;font-size:16px;">└ We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;We&#x27;ll start off the series by laying the groundwork for our ECS implementation.&#xA;</p>
-                        </a>
+                        <div class="postrect">
+                            <a href="/blog/entity-component-system-part1" title="We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;We&#x27;ll start off the series by laying the groundwork for our ECS implementation.&#xA;">
+                                <p style="margin-bottom:1em;">Creating an Entity Component System in c# - Part 1 (5/5/2018)</p>
+                                <p style="margin-top:0em;margin-bottom:0em;font-size:16px;">We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;We&#x27;ll start off the series by laying the groundwork for our ECS implementation.&#xA;</p>
+                            </a>
+                        </div>
                     </li>
-                    <br>
+                    <hr>
                     <li>
-                        <a href="/blog/project-list" title="A list of projects to complete in various language as exercise.">My (non-exhaustive) List of Projects for New Languages (4/28/2018)
-                        <p style="margin-top:0em;margin-bottom:-1em;font-size:16px;">└ A list of projects to complete in various language as exercise.</p>
-                        </a>
+                        <div class="postrect">
+                            <a href="/blog/project-list" title="A list of projects to complete in various language as exercise.">
+                                <p style="margin-bottom:1em;">My (non-exhaustive) List of Projects for New Languages (4/28/2018)</p>
+                                <p style="margin-top:0em;margin-bottom:0em;font-size:16px;">A list of projects to complete in various language as exercise.</p>
+                            </a>
+                        </div>
                     </li>
-                    <br>
+                    <hr>
                     <li>
-                        <a href="/blog/first-post" title="Obligatory &quot;Hello World&quot; post.">First Post (4/16/2018)
-                        <p style="margin-top:0em;margin-bottom:-1em;font-size:16px;">└ Obligatory &quot;Hello World&quot; post.</p>
-                        </a>
+                        <div class="postrect">
+                            <a href="/blog/first-post" title="Obligatory &quot;Hello World&quot; post.">
+                                <p style="margin-bottom:1em;">First Post (4/16/2018)</p>
+                                <p style="margin-top:0em;margin-bottom:0em;font-size:16px;">Obligatory &quot;Hello World&quot; post.</p>
+                            </a>
+                        </div>
                     </li>
-                    <br>
+                    <hr>
             </ul>
                 <ul class="pager">
                     <li class="next">

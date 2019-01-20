@@ -32,7 +32,7 @@ Here's a little something I drew-up to hopefully help visualize. It also might b
 on my phone to take clear pictures.
 Where *E* is our list of entities.
 
-![rough-ecs](/resources/blog/entity-component-system-part4/ecs.jpg)
+![rough-ecs](/assets/blog/entity-component-system-part4/ecs.jpg)
 
 Note that the code itself might not fully conform to these terms. Hopefully, it'll be concise enough to not even matter though.
 
@@ -47,7 +47,6 @@ It's probably worth noting that all of these are literally **fields** and not **
 is that fields are stored as *references* and properties behave more like *values* (properties are a tad more complicated than that as they really
 just wrap around private fields themselves anyway). This is important because if our Component field was accessed like a value, then changes made to
 the component in the code that consumes are ECS wouldn't modify the actual component we're storing, but in essence a copy of it.
-
 Additionally, I've thrown in a couple of constructor overloads to make instantiating this struct more convinient.
 `public EntityItem(int entityIndex)` and `public EntityItem(ComponentBase component)`. Though both of these just call into an
 private constructor that looks like `private EntityItem(int entityIndex, ComponentBase component)` that sets everything up for us.
@@ -189,7 +188,8 @@ without them being aware. *We'll unfortunately have to do this until the machine
 #### Destroying an entity
 Next up, we should take a look at the case where a caller might be a monster and desire the destruction of an entity.
 So I guess we should also include a method of the removal of entities.
-<aside>I actually forgot to implement this until writing this post. Before this time, entities overpopulated the world, causing mass-chaos.</aside>
+
+<aside>😬<br>I actually forgot to implement this until writing this post. Before this time, entities overpopulated the world, causing mass-chaos.</aside>
 
 ```cs
 public void DestroyEntity(int entityId)

@@ -55,7 +55,7 @@ We'll use this list to store *all* of our components for *all* of our entities.
 So the question may arise; "How does one actually distinguish which components belong to which entities?" The answer is actually fairly easy. We'll index where each entity's component list starts, and place this index at the start of our list. We'll access our index via *entity IDs*, that themselves represent indices, but this time, into our index.
 
 Here's a **very, very rough** depiction of how our collection will store our things for us.
-![rough-ecs](/resources/blog/entity-component-system-part3/roughecs.PNG)
+![rough-ecs](/assets/blog/entity-component-system-part3/roughecs.PNG)
 
 
 ## Why Not Use A List of Some Custom 'Entity' Class?
