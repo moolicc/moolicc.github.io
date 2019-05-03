@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
 	<channel>
-		<title>JMikeW's Writings</title>
-		<link>http://icecreamburglar.blog/</link>
-		<description>JMikeW's Writings</description>
+		<title>Moolick's Writings</title>
+		<link>http://moolick.dev/</link>
+		<description>Moolick's Writings</description>
 		<copyright>2019</copyright>
-		<pubDate>Fri, 03 May 2019 09:24:20 GMT</pubDate>
-		<lastBuildDate>Fri, 03 May 2019 09:24:20 GMT</lastBuildDate>
+		<pubDate>Fri, 03 May 2019 09:27:17 GMT</pubDate>
+		<lastBuildDate>Fri, 03 May 2019 09:27:17 GMT</lastBuildDate>
 		<item>
 			<title>Creating an Entity Component System in c# - Revisit</title>
-			<link>http://icecreamburglar.blog/blog/entity-component-system-part4</link>
+			<link>http://moolick.dev/blog/entity-component-system-part4</link>
 			<description>&lt;p&gt;Clear your mind of what you've read here from previous posts in this overly long-winded series.
 Shortly after I wrote the last post, I realized that some of the stuff I said was not entirely correct.
 Specifically, we were still stacking up the HEAP allocations because&lt;/p&gt;</description>
-			<enclosure url="http://icecreamburglar.blog/banner.jpg" length="0" type="image" />
-			<guid>http://icecreamburglar.blog/blog/entity-component-system-part4</guid>
+			<enclosure url="http://moolick.dev/banner.jpg" length="0" type="image" />
+			<guid>http://moolick.dev/blog/entity-component-system-part4</guid>
 			<pubDate>Sat, 12 Jan 2019 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;h1 id="revisit"&gt;Revisit&lt;/h1&gt;
 &lt;p&gt;Clear your mind of what you've read here from previous posts in this overly long-winded series.
@@ -364,12 +364,12 @@ So please, go poke around, have some fun, and let me know how it goes!&lt;/p&gt;
 		</item>
 		<item>
 			<title>Creating an Entity Component System in c# - Part 3</title>
-			<link>http://icecreamburglar.blog/blog/entity-component-system-part3</link>
+			<link>http://moolick.dev/blog/entity-component-system-part3</link>
 			<description>&lt;p&gt;The &lt;em&gt;Entity Component System&lt;/em&gt; (We'll abbreviate it &lt;em&gt;ECS&lt;/em&gt; for the sake of brevity) is designed to break away coupling that is naturally introduced when taking advantage of object-oriented-programming.
 It achieves this by preferring to create &lt;em&gt;entities&lt;/em&gt; with &lt;strong&gt;composition&lt;/strong&gt; rather than &lt;strong&gt;inheritance&lt;/strong&gt;.
 It works by assigning various &lt;em&gt;Components&lt;/em&gt; to each &lt;em&gt;Entity&lt;/em&gt; - such that an entity is nothing more than a container for components - and then various &lt;em&gt;Systems&lt;/em&gt; to act on said components. This in turn, makes the code much easier to maintain and expand upon.&lt;/p&gt;</description>
-			<enclosure url="http://icecreamburglar.blog/banner.jpg" length="0" type="image" />
-			<guid>http://icecreamburglar.blog/blog/entity-component-system-part3</guid>
+			<enclosure url="http://moolick.dev/banner.jpg" length="0" type="image" />
+			<guid>http://moolick.dev/blog/entity-component-system-part3</guid>
 			<pubDate>Wed, 20 Jun 2018 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;h1 id="the-entity-component-system"&gt;The Entity-Component-System&lt;/h1&gt;
 &lt;p&gt;The &lt;em&gt;Entity Component System&lt;/em&gt; (We'll abbreviate it &lt;em&gt;ECS&lt;/em&gt; for the sake of brevity) is designed to break away coupling that is naturally introduced when taking advantage of object-oriented-programming.
@@ -439,12 +439,12 @@ The code will be available on &lt;a href="https://github.com/icecreamburglar"&gt
 		</item>
 		<item>
 			<title>Creating an Entity Component System in c# - Part 2</title>
-			<link>http://icecreamburglar.blog/blog/entity-component-system-part2</link>
+			<link>http://moolick.dev/blog/entity-component-system-part2</link>
 			<description>&lt;p&gt;The &lt;em&gt;Entity Component System&lt;/em&gt; (We'll abbreviate it &lt;em&gt;ECS&lt;/em&gt; for the sake of brevity) is designed to break away coupling that is naturally introduced when taking advantage of object-oriented-programming.
 It achieves this by preferring to create &lt;em&gt;entities&lt;/em&gt; with &lt;strong&gt;composition&lt;/strong&gt; rather than &lt;strong&gt;inheritance&lt;/strong&gt;.
 It works by assigning various &lt;em&gt;Components&lt;/em&gt; to each &lt;em&gt;Entity&lt;/em&gt; - such that an entity is nothing more than a container for components - and then various &lt;em&gt;Systems&lt;/em&gt; to act on said components. This in turn, makes the code much easier to maintain and expand upon.&lt;/p&gt;</description>
-			<enclosure url="http://icecreamburglar.blog/banner.jpg" length="0" type="image" />
-			<guid>http://icecreamburglar.blog/blog/entity-component-system-part2</guid>
+			<enclosure url="http://moolick.dev/banner.jpg" length="0" type="image" />
+			<guid>http://moolick.dev/blog/entity-component-system-part2</guid>
 			<pubDate>Sun, 13 May 2018 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;h1 id="the-entity-component-system"&gt;The Entity-Component-System&lt;/h1&gt;
 &lt;p&gt;The &lt;em&gt;Entity Component System&lt;/em&gt; (We'll abbreviate it &lt;em&gt;ECS&lt;/em&gt; for the sake of brevity) is designed to break away coupling that is naturally introduced when taking advantage of object-oriented-programming.
@@ -746,12 +746,12 @@ It's probably been exhausting for you to have to read through it all, as I've no
 		</item>
 		<item>
 			<title>Creating an Entity Component System in c# - Part 1</title>
-			<link>http://icecreamburglar.blog/blog/entity-component-system-part1</link>
+			<link>http://moolick.dev/blog/entity-component-system-part1</link>
 			<description>&lt;p&gt;The &lt;em&gt;Entity Component System&lt;/em&gt; (We'll abbreviate it &lt;em&gt;ECS&lt;/em&gt; for the sake of brevity) is designed to break away coupling that is naturally introduced when taking advantage of object-oriented-programming.
 It achieves this by preferring to create &lt;em&gt;entities&lt;/em&gt; with &lt;strong&gt;composition&lt;/strong&gt; rather than &lt;strong&gt;inheritance&lt;/strong&gt;.
 It works by assigning various &lt;em&gt;Components&lt;/em&gt; to each &lt;em&gt;Entity&lt;/em&gt; - such that an entity is nothing more than a container for components - and then various &lt;em&gt;Systems&lt;/em&gt; to act on said components. This in turn, makes the code much easier to maintain and expand upon.&lt;/p&gt;</description>
-			<enclosure url="http://icecreamburglar.blog/banner.jpg" length="0" type="image" />
-			<guid>http://icecreamburglar.blog/blog/entity-component-system-part1</guid>
+			<enclosure url="http://moolick.dev/banner.jpg" length="0" type="image" />
+			<guid>http://moolick.dev/blog/entity-component-system-part1</guid>
 			<pubDate>Sat, 05 May 2018 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;aside&gt;
 This is a test
@@ -1020,11 +1020,11 @@ So I guess that's three more posts.&lt;/p&gt;
 		</item>
 		<item>
 			<title>My (non-exhaustive) List of Projects for New Languages</title>
-			<link>http://icecreamburglar.blog/blog/project-list</link>
+			<link>http://moolick.dev/blog/project-list</link>
 			<description>&lt;p&gt;This is a non-exhaustive list of projects that I can complete as exercise for learning new languages.
 Some of this was gleaned from &lt;a href="https://github.com/karan/Projects"&gt;this list&lt;/a&gt;, and some of it wasn't.&lt;/p&gt;</description>
-			<enclosure url="http://icecreamburglar.blog/banner.jpg" length="0" type="image" />
-			<guid>http://icecreamburglar.blog/blog/project-list</guid>
+			<enclosure url="http://moolick.dev/banner.jpg" length="0" type="image" />
+			<guid>http://moolick.dev/blog/project-list</guid>
 			<pubDate>Sat, 28 Apr 2018 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;p&gt;This is a non-exhaustive list of projects that I can complete as exercise for learning new languages.
 Some of this was gleaned from &lt;a href="https://github.com/karan/Projects"&gt;this list&lt;/a&gt;, and some of it wasn't.&lt;/p&gt;
@@ -1103,10 +1103,10 @@ See: &lt;a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes"&gt;Wikiped
 		</item>
 		<item>
 			<title>First Post</title>
-			<link>http://icecreamburglar.blog/blog/first-post</link>
+			<link>http://moolick.dev/blog/first-post</link>
 			<description>&lt;p&gt;This is my first post!&lt;/p&gt;</description>
-			<enclosure url="http://icecreamburglar.blog/banner.jpg" length="0" type="image" />
-			<guid>http://icecreamburglar.blog/blog/first-post</guid>
+			<enclosure url="http://moolick.dev/banner.jpg" length="0" type="image" />
+			<guid>http://moolick.dev/blog/first-post</guid>
 			<pubDate>Mon, 16 Apr 2018 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;p&gt;This is my first post!&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-cs"&gt;static int Main(string[] args)

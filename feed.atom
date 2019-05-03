@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-	<id>http://icecreamburglar.blog/</id>
-	<title>JMikeW's Writings</title>
-	<link rel="self" href="http://icecreamburglar.blog/" />
+	<id>http://moolick.dev/</id>
+	<title>Moolick's Writings</title>
+	<link rel="self" href="http://moolick.dev/" />
 	<rights>2019</rights>
-	<updated>2019-05-03T09:24:20Z</updated>
-	<logo>http://icecreamburglar.blog/banner.jpg</logo>
-	<subtitle>JMikeW's Writings</subtitle>
+	<updated>2019-05-03T09:27:17Z</updated>
+	<logo>http://moolick.dev/banner.jpg</logo>
+	<subtitle>Moolick's Writings</subtitle>
 	<entry>
-		<id>http://icecreamburglar.blog/blog/entity-component-system-part4</id>
+		<id>http://moolick.dev/blog/entity-component-system-part4</id>
 		<title>Creating an Entity Component System in c# - Revisit</title>
-		<link href="http://icecreamburglar.blog/blog/entity-component-system-part4" />
-		<link rel="enclosure" type="image" href="http://icecreamburglar.blog/banner.jpg" />
+		<link href="http://moolick.dev/blog/entity-component-system-part4" />
+		<link rel="enclosure" type="image" href="http://moolick.dev/banner.jpg" />
 		<updated>2019-01-12T00:00:00Z</updated>
 		<content>&lt;h1 id="revisit"&gt;Revisit&lt;/h1&gt;
 &lt;p&gt;Clear your mind of what you've read here from previous posts in this overly long-winded series.
@@ -363,10 +363,10 @@ Shortly after I wrote the last post, I realized that some of the stuff I said wa
 Specifically, we were still stacking up the HEAP allocations because&lt;/p&gt;</summary>
 	</entry>
 	<entry>
-		<id>http://icecreamburglar.blog/blog/entity-component-system-part3</id>
+		<id>http://moolick.dev/blog/entity-component-system-part3</id>
 		<title>Creating an Entity Component System in c# - Part 3</title>
-		<link href="http://icecreamburglar.blog/blog/entity-component-system-part3" />
-		<link rel="enclosure" type="image" href="http://icecreamburglar.blog/banner.jpg" />
+		<link href="http://moolick.dev/blog/entity-component-system-part3" />
+		<link rel="enclosure" type="image" href="http://moolick.dev/banner.jpg" />
 		<updated>2018-06-20T00:00:00Z</updated>
 		<content>&lt;h1 id="the-entity-component-system"&gt;The Entity-Component-System&lt;/h1&gt;
 &lt;p&gt;The &lt;em&gt;Entity Component System&lt;/em&gt; (We'll abbreviate it &lt;em&gt;ECS&lt;/em&gt; for the sake of brevity) is designed to break away coupling that is naturally introduced when taking advantage of object-oriented-programming.
@@ -438,10 +438,10 @@ It achieves this by preferring to create &lt;em&gt;entities&lt;/em&gt; with &lt;
 It works by assigning various &lt;em&gt;Components&lt;/em&gt; to each &lt;em&gt;Entity&lt;/em&gt; - such that an entity is nothing more than a container for components - and then various &lt;em&gt;Systems&lt;/em&gt; to act on said components. This in turn, makes the code much easier to maintain and expand upon.&lt;/p&gt;</summary>
 	</entry>
 	<entry>
-		<id>http://icecreamburglar.blog/blog/entity-component-system-part2</id>
+		<id>http://moolick.dev/blog/entity-component-system-part2</id>
 		<title>Creating an Entity Component System in c# - Part 2</title>
-		<link href="http://icecreamburglar.blog/blog/entity-component-system-part2" />
-		<link rel="enclosure" type="image" href="http://icecreamburglar.blog/banner.jpg" />
+		<link href="http://moolick.dev/blog/entity-component-system-part2" />
+		<link rel="enclosure" type="image" href="http://moolick.dev/banner.jpg" />
 		<updated>2018-05-13T00:00:00Z</updated>
 		<content>&lt;h1 id="the-entity-component-system"&gt;The Entity-Component-System&lt;/h1&gt;
 &lt;p&gt;The &lt;em&gt;Entity Component System&lt;/em&gt; (We'll abbreviate it &lt;em&gt;ECS&lt;/em&gt; for the sake of brevity) is designed to break away coupling that is naturally introduced when taking advantage of object-oriented-programming.
@@ -745,10 +745,10 @@ It achieves this by preferring to create &lt;em&gt;entities&lt;/em&gt; with &lt;
 It works by assigning various &lt;em&gt;Components&lt;/em&gt; to each &lt;em&gt;Entity&lt;/em&gt; - such that an entity is nothing more than a container for components - and then various &lt;em&gt;Systems&lt;/em&gt; to act on said components. This in turn, makes the code much easier to maintain and expand upon.&lt;/p&gt;</summary>
 	</entry>
 	<entry>
-		<id>http://icecreamburglar.blog/blog/entity-component-system-part1</id>
+		<id>http://moolick.dev/blog/entity-component-system-part1</id>
 		<title>Creating an Entity Component System in c# - Part 1</title>
-		<link href="http://icecreamburglar.blog/blog/entity-component-system-part1" />
-		<link rel="enclosure" type="image" href="http://icecreamburglar.blog/banner.jpg" />
+		<link href="http://moolick.dev/blog/entity-component-system-part1" />
+		<link rel="enclosure" type="image" href="http://moolick.dev/banner.jpg" />
 		<updated>2018-05-05T00:00:00Z</updated>
 		<content>&lt;aside&gt;
 This is a test
@@ -1019,10 +1019,10 @@ It achieves this by preferring to create &lt;em&gt;entities&lt;/em&gt; with &lt;
 It works by assigning various &lt;em&gt;Components&lt;/em&gt; to each &lt;em&gt;Entity&lt;/em&gt; - such that an entity is nothing more than a container for components - and then various &lt;em&gt;Systems&lt;/em&gt; to act on said components. This in turn, makes the code much easier to maintain and expand upon.&lt;/p&gt;</summary>
 	</entry>
 	<entry>
-		<id>http://icecreamburglar.blog/blog/project-list</id>
+		<id>http://moolick.dev/blog/project-list</id>
 		<title>My (non-exhaustive) List of Projects for New Languages</title>
-		<link href="http://icecreamburglar.blog/blog/project-list" />
-		<link rel="enclosure" type="image" href="http://icecreamburglar.blog/banner.jpg" />
+		<link href="http://moolick.dev/blog/project-list" />
+		<link rel="enclosure" type="image" href="http://moolick.dev/banner.jpg" />
 		<updated>2018-04-28T00:00:00Z</updated>
 		<content>&lt;p&gt;This is a non-exhaustive list of projects that I can complete as exercise for learning new languages.
 Some of this was gleaned from &lt;a href="https://github.com/karan/Projects"&gt;this list&lt;/a&gt;, and some of it wasn't.&lt;/p&gt;
@@ -1102,10 +1102,10 @@ See: &lt;a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes"&gt;Wikiped
 Some of this was gleaned from &lt;a href="https://github.com/karan/Projects"&gt;this list&lt;/a&gt;, and some of it wasn't.&lt;/p&gt;</summary>
 	</entry>
 	<entry>
-		<id>http://icecreamburglar.blog/blog/first-post</id>
+		<id>http://moolick.dev/blog/first-post</id>
 		<title>First Post</title>
-		<link href="http://icecreamburglar.blog/blog/first-post" />
-		<link rel="enclosure" type="image" href="http://icecreamburglar.blog/banner.jpg" />
+		<link href="http://moolick.dev/blog/first-post" />
+		<link rel="enclosure" type="image" href="http://moolick.dev/banner.jpg" />
 		<updated>2018-04-16T00:00:00Z</updated>
 		<content>&lt;p&gt;This is my first post!&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-cs"&gt;static int Main(string[] args)
