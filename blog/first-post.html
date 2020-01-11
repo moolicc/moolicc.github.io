@@ -33,22 +33,6 @@
         <meta property="og:url" content="http://moolick.dev/blog/first-post" />
         <!-- TODO: More social graph meta tags -->
 
-        <script src="/assets/js/jquery.min.js"></script>
-        <script src="/assets/js/bootstrap.min.js"></script>     
-        <script src="/assets/js/highlight.pack.js"></script>   
-        <script src="/assets/js/clean-blog.js"></script>
-        <script src="/assets/js/d3.v3.min.js"></script>
-        <script src="/assets/js/trianglify.min.js"></script>
-        <script src="/assets/js/Please-compressed.js"></script>
-        <script src="/assets/js/background-check.min.js"></script>
-                
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-                <script src="/assets/js/html5shiv.js"></script>
-                <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->
-        
         
 
 
@@ -132,28 +116,7 @@ let main argv =
 <p>Currently playing around with the <a href="https://wyam.io/">Wyam</a> static site generator.</p>
 
 
-<div id="disqus_thread"></div>
-<script>
 
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-
-var disqus_config = function () {
-var disqus_shortname = 'icecreamburglarblog-1';
-var disqus_title = 'First Post';
-var disqus_url = 'http://moolick.dev/blog/first-post';  // Replace PAGE_URL with your page's canonical URL variable
-var disqus_identifier = 'first-post';
-};
-
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://icecreamburglarblog-1.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                                 </div>
                         </div>
                 </div>
@@ -167,7 +130,15 @@ s.setAttribute('data-timestamp', +new Date());
                 <div class="col-md-12">
                 <ul class="list-inline text-center">
                         <li>
-                        <a href="https://twitter.com/icecreamburglah">
+                        <!--
+                        <a href="">
+                                <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        -->
+                        <a onclick="alert('I no longer use Twitter :(')">
                                 <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -175,7 +146,7 @@ s.setAttribute('data-timestamp', +new Date());
                         </a>
                         </li>
                         <li>
-                        <a href="https://github.com/jmikew">
+                        <a href="https://github.com/moolicc">
                                 <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -184,7 +155,7 @@ s.setAttribute('data-timestamp', +new Date());
                         </li>
                 </ul>
                 <p class="copyright text-muted">
-                        Copyright © 2019 by Moolick.
+                        Copyright © 2020 by Moolick.
                         <br />
                         <a href="/feed.rss"><i class="fa fa-rss"></i> RSS Feed</a> | <a href="/feed.atom"><i class="fa fa-rss"></i> Atom Feed</a>
                         <br />
@@ -196,6 +167,22 @@ s.setAttribute('data-timestamp', +new Date());
 </div>
                 </footer> 
 
+                <script src="/assets/js/jquery.min.js"></script>
+                <script src="/assets/js/bootstrap.min.js"></script>     
+                <script src="/assets/js/highlight.pack.js"></script>   
+                <script src="/assets/js/clean-blog.js"></script>
+                <script src="/assets/js/d3.v3.min.js"></script>
+                <script src="/assets/js/trianglify.min.js"></script>
+                <script src="/assets/js/Please-compressed.js"></script>
+                <script src="/assets/js/background-check.min.js"></script>
+
+                <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+                <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+                <!--[if lt IE 9]>
+                        <script src="/assets/js/html5shiv.js"></script>
+                        <script src="/assets/js/respond.min.js"></script>
+                <![endif]-->
+                
                 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111568751-1"></script>
 <script>

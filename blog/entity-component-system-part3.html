@@ -33,22 +33,6 @@
         <meta property="og:url" content="http://moolick.dev/blog/entity-component-system-part3" />
         <!-- TODO: More social graph meta tags -->
 
-        <script src="/assets/js/jquery.min.js"></script>
-        <script src="/assets/js/bootstrap.min.js"></script>     
-        <script src="/assets/js/highlight.pack.js"></script>   
-        <script src="/assets/js/clean-blog.js"></script>
-        <script src="/assets/js/d3.v3.min.js"></script>
-        <script src="/assets/js/trianglify.min.js"></script>
-        <script src="/assets/js/Please-compressed.js"></script>
-        <script src="/assets/js/background-check.min.js"></script>
-                
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-                <script src="/assets/js/html5shiv.js"></script>
-                <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->
-        
         
 
 
@@ -176,31 +160,10 @@ So the question may arise; &quot;How does one actually distinguish which compone
 <p>The only problem I have with this approach is that you lose some dynamic extensibility capabilities. The best you can do in terms of dynamic entity creation (ie, at runtime) is to use a DSL and have a transpiler translate your DSL data into concrete C# classes.</p>
 <h1 id="the-implementation">The Implementation</h1>
 <p>So I'll just be going over the tid-bits I find interesting.
-The code will be available on <a href="https://github.com/icecreamburglar">my github</a> (in a repo called &quot;hourglass&quot;) at some point.</p>
+The code will be available on <a href="https://github.com/moolicc">my github</a> (in a repo called &quot;hourglass&quot;) at some point.</p>
 
 
-<div id="disqus_thread"></div>
-<script>
 
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-
-var disqus_config = function () {
-var disqus_shortname = 'icecreamburglarblog-1';
-var disqus_title = 'Creating an Entity Component System in c# - Part 3';
-var disqus_url = 'http://moolick.dev/blog/entity-component-system-part3';  // Replace PAGE_URL with your page's canonical URL variable
-var disqus_identifier = 'entity-component-system-part3';
-};
-
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://icecreamburglarblog-1.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                                 </div>
                         </div>
                 </div>
@@ -214,7 +177,15 @@ s.setAttribute('data-timestamp', +new Date());
                 <div class="col-md-12">
                 <ul class="list-inline text-center">
                         <li>
-                        <a href="https://twitter.com/icecreamburglah">
+                        <!--
+                        <a href="">
+                                <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        -->
+                        <a onclick="alert('I no longer use Twitter :(')">
                                 <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -222,7 +193,7 @@ s.setAttribute('data-timestamp', +new Date());
                         </a>
                         </li>
                         <li>
-                        <a href="https://github.com/jmikew">
+                        <a href="https://github.com/moolicc">
                                 <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -231,7 +202,7 @@ s.setAttribute('data-timestamp', +new Date());
                         </li>
                 </ul>
                 <p class="copyright text-muted">
-                        Copyright © 2019 by Moolick.
+                        Copyright © 2020 by Moolick.
                         <br />
                         <a href="/feed.rss"><i class="fa fa-rss"></i> RSS Feed</a> | <a href="/feed.atom"><i class="fa fa-rss"></i> Atom Feed</a>
                         <br />
@@ -243,6 +214,22 @@ s.setAttribute('data-timestamp', +new Date());
 </div>
                 </footer> 
 
+                <script src="/assets/js/jquery.min.js"></script>
+                <script src="/assets/js/bootstrap.min.js"></script>     
+                <script src="/assets/js/highlight.pack.js"></script>   
+                <script src="/assets/js/clean-blog.js"></script>
+                <script src="/assets/js/d3.v3.min.js"></script>
+                <script src="/assets/js/trianglify.min.js"></script>
+                <script src="/assets/js/Please-compressed.js"></script>
+                <script src="/assets/js/background-check.min.js"></script>
+
+                <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+                <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+                <!--[if lt IE 9]>
+                        <script src="/assets/js/html5shiv.js"></script>
+                        <script src="/assets/js/respond.min.js"></script>
+                <![endif]-->
+                
                 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111568751-1"></script>
 <script>

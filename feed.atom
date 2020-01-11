@@ -3,8 +3,8 @@
 	<id>http://moolick.dev/</id>
 	<title>Moolick's Writings</title>
 	<link rel="self" href="http://moolick.dev/" />
-	<rights>2019</rights>
-	<updated>2019-05-03T09:36:13Z</updated>
+	<rights>2020</rights>
+	<updated>2020-01-11T21:39:27Z</updated>
 	<logo>http://moolick.dev/banner.jpg</logo>
 	<subtitle>Moolick's Writings</subtitle>
 	<entry>
@@ -431,7 +431,7 @@ So the question may arise; &amp;quot;How does one actually distinguish which com
 &lt;p&gt;The only problem I have with this approach is that you lose some dynamic extensibility capabilities. The best you can do in terms of dynamic entity creation (ie, at runtime) is to use a DSL and have a transpiler translate your DSL data into concrete C# classes.&lt;/p&gt;
 &lt;h1 id="the-implementation"&gt;The Implementation&lt;/h1&gt;
 &lt;p&gt;So I'll just be going over the tid-bits I find interesting.
-The code will be available on &lt;a href="https://github.com/icecreamburglar"&gt;my github&lt;/a&gt; (in a repo called &amp;quot;hourglass&amp;quot;) at some point.&lt;/p&gt;
+The code will be available on &lt;a href="https://github.com/moolicc"&gt;my github&lt;/a&gt; (in a repo called &amp;quot;hourglass&amp;quot;) at some point.&lt;/p&gt;
 </content>
 		<summary>&lt;p&gt;The &lt;em&gt;Entity Component System&lt;/em&gt; (We'll abbreviate it &lt;em&gt;ECS&lt;/em&gt; for the sake of brevity) is designed to break away coupling that is naturally introduced when taking advantage of object-oriented-programming.
 It achieves this by preferring to create &lt;em&gt;entities&lt;/em&gt; with &lt;strong&gt;composition&lt;/strong&gt; rather than &lt;strong&gt;inheritance&lt;/strong&gt;.
@@ -551,7 +551,7 @@ Wait, what? Don't worry about it. I didn't hear anything.&lt;/p&gt;
     return _lastId;
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;First of all, you probably didn't come to see the use of my &lt;a href="https://github.com/icecreamburglar/waterlogged"&gt;Logging Library&lt;/a&gt;. Though I supposed there's always a &lt;em&gt;non-zero probability that you did&lt;/em&gt;. But anyway, I just replaced calls to the logging library with a loving comment that yells &amp;quot;LOG IT&amp;quot; at you.&lt;/p&gt;
+&lt;p&gt;First of all, you probably didn't come to see the use of my &lt;a href="https://github.com/moolicc/waterlogged"&gt;Logging Library&lt;/a&gt;. Though I supposed there's always a &lt;em&gt;non-zero probability that you did&lt;/em&gt;. But anyway, I just replaced calls to the logging library with a loving comment that yells &amp;quot;LOG IT&amp;quot; at you.&lt;/p&gt;
 &lt;p&gt;But onward to the code! And I'm not going to repost it in bits-and-pieces; you'll just have to scroll back up if you forget it.&lt;/p&gt;
 &lt;p&gt;Naturally we want to make sure there is an ID available for consumption.
 So if we're out of IDs and there are no IDs in our recycle pool, we roll-over our &lt;code&gt;_lastId&lt;/code&gt; to 0.&lt;/p&gt;
@@ -1017,89 +1017,6 @@ So I guess that's three more posts.&lt;/p&gt;
 		<summary>&lt;p&gt;The &lt;em&gt;Entity Component System&lt;/em&gt; (We'll abbreviate it &lt;em&gt;ECS&lt;/em&gt; for the sake of brevity) is designed to break away coupling that is naturally introduced when taking advantage of object-oriented-programming.
 It achieves this by preferring to create &lt;em&gt;entities&lt;/em&gt; with &lt;strong&gt;composition&lt;/strong&gt; rather than &lt;strong&gt;inheritance&lt;/strong&gt;.
 It works by assigning various &lt;em&gt;Components&lt;/em&gt; to each &lt;em&gt;Entity&lt;/em&gt; - such that an entity is nothing more than a container for components - and then various &lt;em&gt;Systems&lt;/em&gt; to act on said components. This in turn, makes the code much easier to maintain and expand upon.&lt;/p&gt;</summary>
-	</entry>
-	<entry>
-		<id>http://moolick.dev/blog/project-list</id>
-		<title>My (non-exhaustive) List of Projects for New Languages</title>
-		<link href="http://moolick.dev/blog/project-list" />
-		<link rel="enclosure" type="image" href="http://moolick.dev/banner.jpg" />
-		<updated>2018-04-28T00:00:00Z</updated>
-		<content>&lt;p&gt;This is a non-exhaustive list of projects that I can complete as exercise for learning new languages.
-Some of this was gleaned from &lt;a href="https://github.com/karan/Projects"&gt;this list&lt;/a&gt;, and some of it wasn't.&lt;/p&gt;
-&lt;p&gt;I'll update this with links to every implementation of any given project I do in any given language.&lt;/p&gt;
-&lt;h1 id="projects"&gt;Projects&lt;/h1&gt;
-&lt;h2 id="battleship"&gt;Battleship&lt;/h2&gt;
-&lt;p&gt;The classic board game in ASCII against a very simple AI.&lt;/p&gt;
-&lt;h2 id="bubblesort"&gt;Bubblesort&lt;/h2&gt;
-&lt;p&gt;Just implement bubblesort.&lt;/p&gt;
-&lt;h2 id="budget-tracker"&gt;Budget Tracker&lt;/h2&gt;
-&lt;p&gt;Create an app that will aid in finances.
-It should keep track of monthly income, and expenses.
-The user should be able to input an amount of money, expressed as a percent, of the net monthly income to put in savings.
-Finally, the app should inform the user how much they can spend on a weekly basis.&lt;/p&gt;
-&lt;h2 id="caesar-cipher"&gt;Caesar Cipher&lt;/h2&gt;
-&lt;p&gt;I think everybody probably knows what this guy is.
-Here's a &lt;a href="https://en.wikipedia.org/wiki/Caesar_cipher"&gt;Wiki Link&lt;/a&gt; to it just in case.&lt;/p&gt;
-&lt;h2 id="change-finder"&gt;Change Finder&lt;/h2&gt;
-&lt;p&gt;Implement a change finder. But instead of printing out the change as a number, we should print out the exact amount of tender we need.
-Example:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Enter cost:
--&amp;gt; 10
-Enter amount payed:
--&amp;gt; 10.31
-
-Change: $0.31; 1 quarter, 1 nickel, and 1 penny.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id="code-snippet-manager"&gt;Code Snippet Manager&lt;/h2&gt;
-&lt;p&gt;Create a code snippet manager.&lt;/p&gt;
-&lt;h2 id="command-script"&gt;Command Script&lt;/h2&gt;
-&lt;p&gt;A simple scripting language which is command driven. So basically a DSL.
-Example:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;var(hello, &amp;quot;Hello, World!&amp;quot;)
-var(num, 0)
-
-LOOP
-if(num == 3, END)
-add(num, 1)
-goto LOOP
-
-END
-print(That was fun!)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id="diffie-hellman-key-generation"&gt;Diffie-Hellman Key Generation&lt;/h2&gt;
-&lt;p&gt;Implement the Diffie-Hellman key generation algorithm.
-See &lt;a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange"&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="dungeon-crawler"&gt;Dungeon-Crawler&lt;/h2&gt;
-&lt;p&gt;Create a dungeon-crawler using ASCII graphics.
-It should be able to randomly generate dungeons.
-Difficulty should progress.&lt;/p&gt;
-&lt;h2 id="gofish"&gt;Gofish&lt;/h2&gt;
-&lt;p&gt;Implement the (card) game of &lt;em&gt;GoFish&lt;/em&gt; in ASCII, and allow the user to play against the computer.&lt;/p&gt;
-&lt;h2 id="gpa-calculator"&gt;GPA Calculator&lt;/h2&gt;
-&lt;p&gt;Given a set of input grades, calculate a GPA.&lt;/p&gt;
-&lt;h2 id="hash-generator"&gt;Hash generator&lt;/h2&gt;
-&lt;p&gt;Implement a hashcode generator.&lt;/p&gt;
-&lt;h2 id="ip-locater"&gt;IP Locater&lt;/h2&gt;
-&lt;p&gt;Roughly resolve an IP Address's physical location.&lt;/p&gt;
-&lt;h2 id="number-guessing-game"&gt;Number Guessing Game&lt;/h2&gt;
-&lt;p&gt;The program randomly selects a number from 0 - 100 and the user must guess what that number is. Whenever the user is wrong, the computer tells them if their guess was too low or too high. Bonus points if we make it work the other way where the user picks the number and the computer guesses it.&lt;/p&gt;
-&lt;h2 id="pig-latin-translator"&gt;Pig Latin Translator&lt;/h2&gt;
-&lt;p&gt;Implement a &lt;a href="https://en.wikipedia.org/wiki/Pig_Latin"&gt;Pig Latin&lt;/a&gt; translator capable of going either &lt;code&gt;English -&amp;gt; Pig Latin&lt;/code&gt; or &lt;code&gt;Pig Latin -&amp;gt; English&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id="rss-feed-analyzer"&gt;RSS Feed Analyzer&lt;/h2&gt;
-&lt;p&gt;Allow the user to enter in the URL for an RSS feed.
-Then analyze the feed and pretty-print the results.&lt;/p&gt;
-&lt;h2 id="sieve-of-eratosthenes"&gt;Sieve of Eratosthenes&lt;/h2&gt;
-&lt;p&gt;Find all prime numbers up to a user-defined point.
-See: &lt;a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes"&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="tcp-clientserver-messaging"&gt;TCP Client/Server Messaging&lt;/h2&gt;
-&lt;p&gt;A simple program which allows users to chat with each other over a TCP connection. Bonus points if the users can create different chat rooms. Also encryption would be a nice bonus.&lt;/p&gt;
-&lt;h2 id="text-based-adventure-game"&gt;Text-based Adventure Game&lt;/h2&gt;
-&lt;p&gt;Create a little text-based adventure game.&lt;/p&gt;
-&lt;h2 id="zip"&gt;Zip&lt;/h2&gt;
-&lt;p&gt;Implement an algorithm for zipping/unzipping data/files.&lt;/p&gt;
-</content>
-		<summary>&lt;p&gt;This is a non-exhaustive list of projects that I can complete as exercise for learning new languages.
-Some of this was gleaned from &lt;a href="https://github.com/karan/Projects"&gt;this list&lt;/a&gt;, and some of it wasn't.&lt;/p&gt;</summary>
 	</entry>
 	<entry>
 		<id>http://moolick.dev/blog/first-post</id>
