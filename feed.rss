@@ -5,8 +5,248 @@
 		<link>http://moolick.dev/</link>
 		<description>Moolick's Writings</description>
 		<copyright>2020</copyright>
-		<pubDate>Sat, 11 Jan 2020 21:43:16 GMT</pubDate>
-		<lastBuildDate>Sat, 11 Jan 2020 21:43:16 GMT</lastBuildDate>
+		<pubDate>Tue, 21 Jan 2020 20:40:34 GMT</pubDate>
+		<lastBuildDate>Tue, 21 Jan 2020 20:40:34 GMT</lastBuildDate>
+		<item>
+			<title>Using CAKE To Organize Dependencies</title>
+			<link>http://moolick.dev/blog/using-cake</link>
+			<description>&lt;p&gt;During the &lt;em&gt;Great Refactoring&lt;/em&gt; of Wallapp, I encountered a situation that was going to get tedious to solve by-hand.&lt;/p&gt;</description>
+			<enclosure url="http://moolick.dev/banner.jpg" length="0" type="image" />
+			<guid>http://moolick.dev/blog/using-cake</guid>
+			<pubDate>Tue, 21 Jan 2020 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;h1 id="use-case"&gt;Use-case&lt;/h1&gt;
+&lt;p&gt;During the &lt;em&gt;Great Refactoring&lt;/em&gt; of Wallapp, I encountered a situation that was going to get tedious to solve by-hand.&lt;/p&gt;
+&lt;p&gt;I separated out the Engine from the UI into two distinct projects (Engine and App respectively).
+When launched, the UI starts the Engine process, and they communicate via an IPC channel through Standard In/Out.&lt;/p&gt;
+&lt;p&gt;That part's fine, it's just some context. The issue is copying the Engine's output to the App's output location so the App can actually resolve the Engine's executable.&lt;/p&gt;
+&lt;p&gt;I initially solved that via a simple Post-Build script from within visual studio that copied the output from one to the other. Voila, problem solved. Another way I could have solved it, would have been by simply changing the Engine's output directory to that of the App's. But I didn't like doing it that way. I'm picky I suppose.&lt;/p&gt;
+&lt;p&gt;Though there was an annoyance. Between both projects, as it obviously turned out, we had a several dependencies that were needed in the program's working directory to resolve.&lt;/p&gt;
+&lt;p&gt;That was a mess. A messy-mess, even.&lt;/p&gt;
+&lt;p&gt;Instead of extending my build script, I opted to resolve this by finally learning CAKE.&lt;/p&gt;
+&lt;h1 id="c-make-enters-the-room"&gt;[C# MAKE ENTERS THE ROOM]&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href="https://cakebuild.net/"&gt;Cake&lt;/a&gt;&lt;/em&gt;, or &lt;em&gt;c# make&lt;/em&gt;, is a build automation tool using a familiar c# syntax.
+A quick google and some samples later, and it looks like Cake provides an easy, relatively painless way to not only run builds, but &lt;em&gt;clean directories&lt;/em&gt;, run &lt;em&gt;unit tests&lt;/em&gt;, &lt;em&gt;compress files&lt;/em&gt;, build &lt;em&gt;NuGet packages&lt;/em&gt;, alter &lt;em&gt;version numbers&lt;/em&gt; within a project's AssemblyInfo, and of course, the thing we're interested in, &lt;em&gt;copying/moving files and directories&lt;/em&gt;.&lt;/p&gt;
+&lt;blockquote class="blockquote"&gt;
+&lt;p&gt;As a matter of fact, it looks like cake utilizes Roslyn's Scripting API. &lt;br /&gt;
+Though I've not actually looked into it, so I'm not certain.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="quick-sample"&gt;Quick Sample&lt;/h2&gt;
+&lt;p&gt;Here's a simple example of a basic Cake script I've taken from the official repo and slightly tweaked.&lt;br /&gt;
+&lt;em&gt;Source: &lt;a href="https://github.com/cake-build/example/blob/master/build.cake"&gt;https://github.com/cake-build/example/blob/master/build.cake&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-cs"&gt;// Get the task the user wants to perform from the command line arguments. We'll use a default value of &amp;quot;Default&amp;quot; should the user not specify anything.
+var target = Argument(&amp;quot;target&amp;quot;, &amp;quot;Default&amp;quot;);
+
+// Get the project configuration the user wants to perform the task on from the command line.
+var configuration = Argument(&amp;quot;configuration&amp;quot;, &amp;quot;Release&amp;quot;);
+
+// Define the build directory so we don't have to type this out everywhere. This makes use of Cake's IO operations and types.
+var buildDirectory = Directory(&amp;quot;./src/Example/bin&amp;quot;) + Directory(configuration);
+
+
+// Define our &amp;quot;Clean&amp;quot; task. This task will clean the build directory. Notice the lambda that gets invoked when the task is run is denoted by the &amp;quot;Does&amp;quot; function.
+Task(&amp;quot;Clean&amp;quot;)
+    .Does(() =&amp;gt;
+{
+    // Log some stuff to the output window.
+    Information(&amp;quot;Cleaning '{buildDirectory}'...&amp;quot;);
+    CleanDirectory(buildDirectory);
+});
+
+
+// Create a task that restores nuget package references.
+// Notice that this task is &amp;quot;dependent on&amp;quot; the clean task. This works pretty much as expected - it'll execute the &amp;quot;Clean&amp;quot; task prior to actually invoking this task.
+Task(&amp;quot;Restore-NuGet-Packages&amp;quot;)
+    .IsDependentOn(&amp;quot;Clean&amp;quot;)
+    .Does(() =&amp;gt;
+{
+    NuGetRestore(&amp;quot;./src/Example.sln&amp;quot;);
+});
+
+
+// Create a task that will invoke MSBuild to actually build our prject. Notice that this task first restores nuget packages, which in turn cleans the build directory.
+Task(&amp;quot;Build&amp;quot;)
+    .IsDependentOn(&amp;quot;Restore-NuGet-Packages&amp;quot;)
+    .Does(() =&amp;gt;
+{
+    // Log some stuff.
+    Information(&amp;quot;Building...&amp;quot;)
+    Debug($&amp;quot;Configuration {configuration}.&amp;quot;);
+    
+    // The settings paramater either accepts an instance of MSBuildSettings, or an Action&amp;lt;MSBuildSettings&amp;gt; as seen here.
+    MSBuild(&amp;quot;./src/Example.sln&amp;quot;, settings =&amp;gt;
+        settings.SetConfiguration(configuration));
+});
+
+
+// Execute the task the user specified.
+RunTarget(target);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Notice that we are also able to write to a log as we go.
+More info on this in the relevant docs, here: &lt;a href="https://cakebuild.net/dsl/logging/"&gt;https://cakebuild.net/dsl/logging/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="execute-the-cake-script"&gt;Execute The Cake Script&lt;/h2&gt;
+&lt;p&gt;To actually execute the cake script, the bootstrapper must be run. The bootstrapper script is a small powershell script which, according to the &lt;a href="https://cakebuild.net/docs/tutorials/getting-started"&gt;docs&lt;/a&gt;, simply ensures the Cake runtime is downloaded and accessible.
+It then invokes the cake command line app which executes the build script.&lt;/p&gt;
+&lt;p&gt;To start from scratch, use PowerShell to download the bootstrapping script from the Cake team. Execute the following command in powershell from the directory your cake build script is located:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-ps"&gt;Invoke-WebRequest https://cakebuild.net/download/bootstrapper/windows -OutFile build.ps1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote class="blockquote"&gt;
+&lt;p&gt;Incidentally, powershell is also something I want to get more proficient in. But interestingly enough, even the static site generator I'm using (&lt;a href="https://wyam.io/"&gt;https://wyam.io/&lt;/a&gt;) takes advantage of cake and the accompanying powershell bootstrapper. I've just been mindlessly invoking the script without knowing what's going on up until this point.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Then to run your build script, simply execute &amp;quot;./build.ps1 [arguments]&amp;quot; from the same directory.&lt;/p&gt;
+&lt;p&gt;All this information is available in the CakeBuild docs on their site at &lt;a href="https://cakebuild.net/docs/"&gt;https://cakebuild.net/docs/&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id="our-cake-script-and-post-build-events"&gt;Our Cake Script And Post-Build Events&lt;/h1&gt;
+&lt;p&gt;With some formalities out of the way, I think we're ready to see how exactly we can leverage the CakeBuild system to automatically copy output files from one project, to another.
+Then finally, after that move, we'll copy &lt;strong&gt;all&lt;/strong&gt; dependency libraries to a &amp;quot;lib/&amp;quot; directory in the app's output directory.&lt;/p&gt;
+&lt;p&gt;I'm literally going to just copy+paste the WallApp cake build script in its current state.&lt;/p&gt;
+&lt;h2 id="cake-build-script"&gt;Cake Build Script&lt;/h2&gt;
+&lt;pre&gt;&lt;code class="language-cs"&gt;var target = Argument(&amp;quot;target&amp;quot;, &amp;quot;Build&amp;quot;);
+var configuration = Argument(&amp;quot;configuration&amp;quot;, &amp;quot;Debug&amp;quot;);
+var platform = Argument(&amp;quot;platform&amp;quot;, &amp;quot;Automatic&amp;quot;);
+
+var solution = &amp;quot;./WallApp.sln&amp;quot;;
+
+// Set MSBuildSettings configuration to our input arguments.
+public void SetConfiguration(MSBuildSettings settings)
+{
+    settings.Configuration = configuration;
+    settings.MSBuildPlatform = (MSBuildPlatform)Enum.Parse(typeof(MSBuildPlatform), platform);
+}
+
+// Nuget restore.
+Task(&amp;quot;Restore&amp;quot;).Does(() =&amp;gt; NuGetRestore(solution));
+
+// Rebuild (Clean -&amp;gt; Build).
+Task(&amp;quot;Rebuild&amp;quot;).IsDependentOn(&amp;quot;Clean&amp;quot;).IsDependentOn(&amp;quot;Build&amp;quot;);
+
+// Build the project, copying the output of the Engine to the output directory of the App.
+Task(&amp;quot;Build&amp;quot;)
+    .IsDependentOn(&amp;quot;Restore&amp;quot;)
+    .Does(() =&amp;gt;
+{
+    MSBuild(solution, SetConfiguration);
+    RunTarget(&amp;quot;CopyOutput&amp;quot;);
+});
+
+
+// Clean output directories.
+Task(&amp;quot;Clean&amp;quot;)
+    .Does(() =&amp;gt;
+{
+    var directories = new string[]
+    {
+        string.Format(&amp;quot;./Engine/obj/{0}&amp;quot;, configuration),
+        string.Format(&amp;quot;./Engine/bin/{0}&amp;quot;, configuration),
+        string.Format(&amp;quot;./WallApp.App/obj/{0}&amp;quot;, configuration),
+        string.Format(&amp;quot;./WallApp.App/bin/{0}&amp;quot;, configuration)
+    };
+
+    foreach (var item in directories)
+    {
+        Information($&amp;quot;Cleaning '{item}'...&amp;quot;);
+        CleanDirectories(item);
+    }
+
+    Information($&amp;quot;Cleaned {directories.Length} directories&amp;quot;);
+});
+
+// Copy the output from Bridge to App's output directory.
+Task(&amp;quot;CopyOutput&amp;quot;)
+    .Does(() =&amp;gt;
+{
+    var engineDirectory = $&amp;quot;./Engine/bin/{configuration}/&amp;quot;;
+    var appDirectory = $&amp;quot;./WallApp.App/bin/{configuration}/&amp;quot;;
+    var libDirectory = $&amp;quot;{appDirectory}lib/&amp;quot;;
+    var modulesDirectory = $&amp;quot;./modules/&amp;quot;;
+
+    // Copy Engine's output to App output.
+    Information($&amp;quot;Copying files from '{engineDirectory}' to '{appDirectory}'...&amp;quot;);
+    CopyFiles(engineDirectory + &amp;quot;*&amp;quot;, appDirectory);
+
+    // Create subfolder for third-party libraries.
+    Information($&amp;quot;Recreating '{libDirectory}'...&amp;quot;);
+    if(DirectoryExists(libDirectory))
+    {
+        DeleteDirectory(libDirectory, new DeleteDirectorySettings() { Recursive = true, Force = true });
+    }
+    CreateDirectory(libDirectory);
+
+    // Copy third-party libraries to sub-folder.
+    var files = System.IO.Directory.GetFiles(MakeAbsolute(DirectoryPath.FromString(appDirectory)).ToString());
+    Information(&amp;quot;\r\nCopying libs======================&amp;quot;);
+    foreach(var file in files)
+    {
+        // Don't copy *our* files.
+        if(file.EndsWith(&amp;quot;WallApp.exe&amp;quot;)
+            || file.EndsWith(&amp;quot;WallApp.pdb&amp;quot;)
+            || file.EndsWith(&amp;quot;WallApp.exe.config&amp;quot;))
+        {
+            continue;
+        }
+        if(file.EndsWith(&amp;quot;Engine.exe&amp;quot;)
+            || file.EndsWith(&amp;quot;Engine.pdb&amp;quot;)
+            || file.EndsWith(&amp;quot;Engine.exe.config&amp;quot;))
+        {
+            continue;
+        }
+
+        
+        var withoutExtension = System.IO.Path.GetFileNameWithoutExtension(file);
+        var name = System.IO.Path.GetFileName(file);
+
+        // If the file is a dll or pdb, move it to the subfolder.
+        if(file.EndsWith(&amp;quot;.dll&amp;quot;)
+            || file.EndsWith(&amp;quot;.pdb&amp;quot;))
+        {
+            Information($&amp;quot;Moving '{name}' to lib directory...&amp;quot;);
+            MoveFileToDirectory(file, libDirectory);
+        }
+
+        // If the file is an xml and also there is an accompanying library, then
+        // this xml must be docs for the library -- move it.
+        if(file.EndsWith(&amp;quot;.xml&amp;quot;)
+            &amp;amp;&amp;amp; files.Any((f) =&amp;gt; f.EndsWith(withoutExtension + &amp;quot;.dll&amp;quot;)))
+        {
+            Information($&amp;quot;Moving '{name}' to lib directory...&amp;quot;);
+            MoveFileToDirectory(file, libDirectory);
+        }
+    }
+    Information(&amp;quot;Finished copying libs======================\r\n&amp;quot;);
+
+    // Copy the modules folder in the root of the solution to the modules sub directory.
+    Information($&amp;quot;Copying '{modulesDirectory}' to '{appDirectory}modules/'...&amp;quot;);
+    CopyDirectory(modulesDirectory, appDirectory + &amp;quot;modules/&amp;quot;);
+});
+
+
+RunTarget(target);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Whew! That's a little bit more than the previous sample. The interesting bits are in the &lt;code&gt;CopyOutput&lt;/code&gt; task.&lt;/p&gt;
+&lt;p&gt;Of particular importance, are the &lt;code&gt;CopyFiles&lt;/code&gt;, &lt;code&gt;DirectoryExists&lt;/code&gt;, &lt;code&gt;MoveFileToDirectory&lt;/code&gt;, and &lt;code&gt;CopyDirectory&lt;/code&gt; functions.&lt;/p&gt;
+&lt;p&gt;Additionally, I through together some logic to distinguish the difference between xml documentations for code and actual xml files the program needs to function. &lt;strong&gt;It won't move xml files that don't have accompanying dlls to the subfolder.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The order of operations here is something like this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Copy Engine output to App output (where we'll actually launch our program from)&lt;/li&gt;
+&lt;li&gt;Create the &amp;quot;lib/&amp;quot; subfolder, first deleting it and its contents if it already exists&lt;/li&gt;
+&lt;li&gt;Iterate over all files in the output folder and move them to the &amp;quot;lib/&amp;quot; directory as appropriate.&lt;/li&gt;
+&lt;li&gt;Finally, move extension modules from the solution directory to the app's output directory.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="post-build-script"&gt;Post-Build Script&lt;/h2&gt;
+&lt;p&gt;The is all well and good. But what if we want to perform our copy whenever we &lt;em&gt;do&lt;/em&gt; happen to build from within visual studio?
+MSBuild allows you to write both Pre-and-Post build event .bat scripts that it'll execute when appropriate during the build process.
+And this is what we'll take advantage of.
+To access what we're interested in, the Post Build script, navigate to the project's properties from within Visual Studio and it'll be one of the tabs on the left pane.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/assets/blog/using-cake/build-events-page.PNG" class="img-fluid" alt="build-events-page" /&gt;&lt;/p&gt;
+&lt;p&gt;In the &amp;quot;Post-build event command line:&amp;quot; box, we'll use the following snippet: &lt;code&gt;cd &amp;quot;$(SolutionDir)&amp;quot; &amp;amp;&amp;amp; powershell -file &amp;quot;build.ps1&amp;quot; -target CopyOutput&lt;/code&gt;.
+This snippet changes the working directory from the project's directory to the solution's directory (where our build script &lt;em&gt;should&lt;/em&gt; be. If you're isn't here, change this bit to wherever your build script is located). Then it launches powershell passing in the build.ps1 script as an argument, as well as the target-task we want cake to execute.&lt;/p&gt;
+&lt;h1 id="and.thats-it"&gt;And.. That's it...&lt;/h1&gt;
+&lt;p&gt;That's literally all there is to it.
+Cake is something I've wanted to learn for a couple years now, but never really needed it before now. And truthfully, I probably could have achieved what I'm using for in WallApp with just a powershell/bat script.&lt;/p&gt;
+&lt;p&gt;But I wanted to sieze this opportunity to learn finally learn Cake, and I was not dissappointed. It seems to be one of those things that's almost deceptively simple.&lt;/p&gt;
+&lt;p&gt;After reading about Cake and looking at examples, I finally just jumped right into writing it all up myself and found that it really wasn't as complicated as I was originally making it out to be.&lt;/p&gt;
+&lt;p&gt;Hopefully you've drawn something from this, if not, maybe just start from the official Cake docs and dive right in.&lt;/p&gt;
+&lt;p&gt;You can always see the cake script I use in WallApp on the project's repository at &lt;a href="https://github.com/moolicc/WallApp"&gt;https://github.com/moolicc/WallApp&lt;/a&gt;. Currently, the dev branch is the only place you'll find the relevant information.&lt;/p&gt;
+</content:encoded>
+		</item>
 		<item>
 			<title>Creating an Entity Component System in c# - Revisit</title>
 			<link>http://moolick.dev/blog/entity-component-system-part4</link>
@@ -175,7 +415,11 @@ without them being aware. &lt;em&gt;We'll unfortunately have to do this until th
 &lt;h4 id="destroying-an-entity"&gt;Destroying an entity&lt;/h4&gt;
 &lt;p&gt;Next up, we should take a look at the case where a caller might be a monster and desire the destruction of an entity.
 So I guess we should also include a method of the removal of entities.&lt;/p&gt;
-&lt;aside&gt;😬&lt;br&gt;I actually forgot to implement this until writing this post. Before this time, entities overpopulated the world, causing mass-chaos.&lt;/aside&gt;
+&lt;aside&gt;Remember, Simba&lt;/aside&gt;
+&lt;p&gt;\&lt;/p&gt;
+&lt;blockquote class="blockquote"&gt;
+&lt;p&gt;: I actually forgot to implement this until writing this post. Before this time, entities overpopulated the world, causing mass-chaos.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;pre&gt;&lt;code class="language-cs"&gt;public void DestroyEntity(int entityId)
 {
   //Sanity check to make sure the passed entityId is valid.

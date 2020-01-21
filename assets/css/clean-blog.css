@@ -394,11 +394,31 @@ body {
     webkit-tap-highlight-color: #337ab7;
   }
   aside {
-      background-color: ghostwhite;
+    width: 30%;
+      background-color: rgb(224, 243, 255);
+      border-radius: 0.25em;
       border: 0.01em solid lightgray;
-      margin-left: 5%;
-      margin-right: 5%;
-      margin-bottom: 1em;
+      
+      margin-right: -30%;
+      margin-bottom: -100%;
       padding: 0.5em;
       float: right;
   }
+
+  blockquote {
+    background: #f5f5f5;
+    color: #656565;
+    border-left: 8px #aaa solid;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin: 30px 20px;
+    font-size: 1.03em;
+  }
+  
+    blockquote *:first-child {
+      margin-top: 0;
+    }
+  
+    blockquote *:last-child {
+      margin-bottom: 0;
+    }

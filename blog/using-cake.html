@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 
-        <title>Moolick&#x27;s Writings</title>
+        <title>Moolick&#x27;s Writings - Using CAKE To Organize Dependencies</title>
         <meta name="description" content="Moolick&#x27;s Writings" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
@@ -28,9 +28,9 @@
         <meta name="msapplication-tooltip" content="Moolick&#x27;s Writings" />
         <meta name="msapplication-starturl" content="/" />
 
-        <meta property="og:title" content="Moolick&#x27;s Writings" />
+        <meta property="og:title" content="Moolick&#x27;s Writings - Using CAKE To Organize Dependencies" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://moolick.dev/" />
+        <meta property="og:url" content="http://moolick.dev/blog/using-cake" />
         <!-- TODO: More social graph meta tags -->
 
         
@@ -73,10 +73,18 @@
                                 <div class="row">
                                         <div class="col-md-12">
 
-    <div class="site-heading">
-        <h1>Moolick&#x27;s Writings</h1>
-                <hr class="small">
-        <span class="subheading">This is Moolick&#x27;s realm; a collection of misdemeanors in software development. Also I expend a lot of coffee while doing this, so sorry about the rising cost of that.</span>
+    
+<div class="post-heading">
+    <h1>Using CAKE To Organize Dependencies</h1>
+        <h2 class="subheading">Let&#x27;s dive into using c#&#x27;s build tool, CAKE, to organize dependencies via the use of sub-directories of the output directory.&#xA;</h2>
+    <div class="meta">        
+Published on Tuesday, January 21, 2020<br>    </div>
+        <div class="tags">
+                    <a role="button" href="/tags/C%23" class="btn btn-default btn-xs">C#</a>
+                    <a role="button" href="/tags/Scripting" class="btn btn-default btn-xs">Scripting</a>
+                    <a role="button" href="/tags/Tooling" class="btn btn-default btn-xs">Tooling</a>
+                    <a role="button" href="/tags/WallApp" class="btn btn-default btn-xs">WallApp</a>
+        </div>     
 </div>
                                         </div>
                                 </div>
@@ -88,15 +96,7 @@
                         <div class="row">
                                 <div id="content" class="col-md-12">
                                         
-<div class="row">
-    <div class="col-sm-8 right-border">
-                <div class="post-preview">
-                    <a href="/blog/using-cake">
-                        <h2 class="post-title">Using CAKE To Organize Dependencies</h2>
-                            <h3 class="post-subtitle">Let&#x27;s dive into using c#&#x27;s build tool, CAKE, to organize dependencies via the use of sub-directories of the output directory.&#xA;</h3>
-                    </a>
-                    <p class="post-meta">Posted on Tuesday, January 21, 2020</p>
-                        <hr>
+
 <h1 id="use-case">Use-case</h1>
 <p>During the <em>Great Refactoring</em> of Wallapp, I encountered a situation that was going to get tedious to solve by-hand.</p>
 <p>I separated out the Engine from the UI into two distinct projects (Engine and App respectively).
@@ -328,97 +328,9 @@ Cake is something I've wanted to learn for a couple years now, but never really 
 <p>After reading about Cake and looking at examples, I finally just jumped right into writing it all up myself and found that it really wasn't as complicated as I was originally making it out to be.</p>
 <p>Hopefully you've drawn something from this, if not, maybe just start from the official Cake docs and dive right in.</p>
 <p>You can always see the cake script I use in WallApp on the project's repository at <a href="https://github.com/moolicc/WallApp">https://github.com/moolicc/WallApp</a>. Currently, the dev branch is the only place you'll find the relevant information.</p>
-                </div>       
-        <ul class="pager">
-            <li class="previous">                
-            </li>
-            <li class="next">
-            </li>
-        </ul>
-    </div>
-    <div class="col-sm-4 sidebar">
-        <hr class="visible-xs-block" />
 
-            <h5>Tags</h5>
-            <div>
-                    <a role="button" href="/tags/C%23" class="btn btn-default btn-sm"> C# (5)</a>
-                    <a role="button" href="/tags/MonoGame" class="btn btn-default btn-sm"> MonoGame (4)</a>
-                    <a role="button" href="/tags/Game-Development" class="btn btn-default btn-sm"> Game Development (4)</a>
-                    <a role="button" href="/tags/Design-Pattern" class="btn btn-default btn-sm"> Design Pattern (4)</a>
-                    <a role="button" href="/tags/Tooling" class="btn btn-default btn-sm"> Tooling (1)</a>
-                    <a role="button" href="/tags/Scripting" class="btn btn-default btn-sm"> Scripting (1)</a>
-                    <a role="button" href="/tags/WallApp" class="btn btn-default btn-sm"> WallApp (1)</a>
-                    <a role="button" href="/tags/Introduction" class="btn btn-default btn-sm"> Introduction (1)</a>
-            </div>
-            <ul class="pager">
-                <li class="next">
-                    <a href="/tags">View All Tags &rarr;</a>
-                </li>
-            </ul>
 
-            <hr />
-            <h5>Older Posts</h5>
-            <ul class="list-unstyled">
-                    <li>
-                        <div class="postrect">
-                            <a href="/blog/entity-component-system-part4" title="We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;In this post, we&#x27;ll throw all the previous posts away and actually write an ECS skeleton.&#xA;">
-                                <p style="margin-bottom:0em;">Creating an Entity Component System in c# - Revisit</p>
-                                <span style="margin-top:0.5em;margin-bottom:1em;font-size:0.9em;font-style:italic">January 12, 2019</span>
-                                <p style="margin-top:1em;margin-bottom:0em;font-size:16px;">We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;In this post, we&#x27;ll throw all the previous posts away and actually write an ECS skeleton.&#xA;</p>
-                            </a>
-                        </div>
-                    </li>
-                    <hr>
-                    <li>
-                        <div class="postrect">
-                            <a href="/blog/entity-component-system-part3" title="We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;In this post, we&#x27;ll optimize the entire thing so that it is not  hor&#xB7;ren&#xB7;dous&#xB7;ly overweight.&#xA;">
-                                <p style="margin-bottom:0em;">Creating an Entity Component System in c# - Part 3</p>
-                                <span style="margin-top:0.5em;margin-bottom:1em;font-size:0.9em;font-style:italic">June 20, 2018</span>
-                                <p style="margin-top:1em;margin-bottom:0em;font-size:16px;">We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;In this post, we&#x27;ll optimize the entire thing so that it is not  hor&#xB7;ren&#xB7;dous&#xB7;ly overweight.&#xA;</p>
-                            </a>
-                        </div>
-                    </li>
-                    <hr>
-                    <li>
-                        <div class="postrect">
-                            <a href="/blog/entity-component-system-part2" title="We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;In this post, we&#x27;ll talk about the EntityManager.&#xA;">
-                                <p style="margin-bottom:0em;">Creating an Entity Component System in c# - Part 2</p>
-                                <span style="margin-top:0.5em;margin-bottom:1em;font-size:0.9em;font-style:italic">May 13, 2018</span>
-                                <p style="margin-top:1em;margin-bottom:0em;font-size:16px;">We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;In this post, we&#x27;ll talk about the EntityManager.&#xA;</p>
-                            </a>
-                        </div>
-                    </li>
-                    <hr>
-                    <li>
-                        <div class="postrect">
-                            <a href="/blog/entity-component-system-part1" title="We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;We&#x27;ll start off the series by laying the groundwork for our ECS implementation.&#xA;">
-                                <p style="margin-bottom:0em;">Creating an Entity Component System in c# - Part 1</p>
-                                <span style="margin-top:0.5em;margin-bottom:1em;font-size:0.9em;font-style:italic">May 05, 2018</span>
-                                <p style="margin-top:1em;margin-bottom:0em;font-size:16px;">We shall explore the creation and usage of an Entity-Component-System in a couple posts.&#xA;We&#x27;ll start off the series by laying the groundwork for our ECS implementation.&#xA;</p>
-                            </a>
-                        </div>
-                    </li>
-                    <hr>
-                    <li>
-                        <div class="postrect">
-                            <a href="/blog/first-post" title="Obligatory &quot;Hello World&quot; post.">
-                                <p style="margin-bottom:0em;">First Post</p>
-                                <span style="margin-top:0.5em;margin-bottom:1em;font-size:0.9em;font-style:italic">April 16, 2018</span>
-                                <p style="margin-top:1em;margin-bottom:0em;font-size:16px;">Obligatory &quot;Hello World&quot; post.</p>
-                            </a>
-                        </div>
-                    </li>
-                    <hr>
-            </ul>
-                <ul class="pager">
-                    <li class="next">
-                        <a href="/blog">View All Posts &rarr;</a>
-                    </li>
-                </ul>
 
-        
-    </div> 
-</div>
                                 </div>
                         </div>
                 </div>

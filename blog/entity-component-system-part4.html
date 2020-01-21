@@ -256,7 +256,11 @@ without them being aware. <em>We'll unfortunately have to do this until the mach
 <h4 id="destroying-an-entity">Destroying an entity</h4>
 <p>Next up, we should take a look at the case where a caller might be a monster and desire the destruction of an entity.
 So I guess we should also include a method of the removal of entities.</p>
-<aside>😬<br>I actually forgot to implement this until writing this post. Before this time, entities overpopulated the world, causing mass-chaos.</aside>
+<aside>Remember, Simba</aside>
+<p>\</p>
+<blockquote class="blockquote">
+<p>: I actually forgot to implement this until writing this post. Before this time, entities overpopulated the world, causing mass-chaos.</p>
+</blockquote>
 <pre><code class="language-cs">public void DestroyEntity(int entityId)
 {
   //Sanity check to make sure the passed entityId is valid.
