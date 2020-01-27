@@ -4,13 +4,13 @@
 	<title>Moolick's Writings</title>
 	<link rel="self" href="http://moolick.dev/" />
 	<rights>2020</rights>
-	<updated>2020-01-21T20:40:34Z</updated>
+	<updated>2020-01-27T02:55:05Z</updated>
 	<logo>http://moolick.dev/banner.jpg</logo>
 	<subtitle>Moolick's Writings</subtitle>
 	<entry>
-		<id>http://moolick.dev/blog/using-cake</id>
+		<id>http://moolick.dev/blog/using-cake-to-organize-dependencies</id>
 		<title>Using CAKE To Organize Dependencies</title>
-		<link href="http://moolick.dev/blog/using-cake" />
+		<link href="http://moolick.dev/blog/using-cake-to-organize-dependencies" />
 		<link rel="enclosure" type="image" href="http://moolick.dev/banner.jpg" />
 		<updated>2020-01-21T00:00:00Z</updated>
 		<content>&lt;h1 id="use-case"&gt;Use-case&lt;/h1&gt;
@@ -412,10 +412,8 @@ without them being aware. &lt;em&gt;We'll unfortunately have to do this until th
 &lt;h4 id="destroying-an-entity"&gt;Destroying an entity&lt;/h4&gt;
 &lt;p&gt;Next up, we should take a look at the case where a caller might be a monster and desire the destruction of an entity.
 So I guess we should also include a method of the removal of entities.&lt;/p&gt;
-&lt;aside&gt;Remember, Simba&lt;/aside&gt;
-&lt;p&gt;\&lt;/p&gt;
 &lt;blockquote class="blockquote"&gt;
-&lt;p&gt;: I actually forgot to implement this until writing this post. Before this time, entities overpopulated the world, causing mass-chaos.&lt;/p&gt;
+&lt;p&gt;I actually forgot to implement this until writing this post. Before this time, entities overpopulated the world, causing mass-chaos.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;pre&gt;&lt;code class="language-cs"&gt;public void DestroyEntity(int entityId)
 {
@@ -599,7 +597,7 @@ I've included plenty of overloads to make the life of a consumer of this API eas
 &lt;p&gt;Whew! After nearly a year, I've finally gotten around to completing an ECS and writing about it.
 The Entity Component System is a fantastic tool to have on your belt, and honestly it's a joy to work with.
 Writing one up can be kind of boiler-plate, but I find it fun to try and make it unique and at least some-what performance friendly.&lt;/p&gt;
-&lt;p&gt;I've thrown the full code up on my &lt;a href="https://github.com/jmikew/hourglass"&gt;github&lt;/a&gt;.
+&lt;p&gt;I've thrown the full code up on my &lt;a href="https://github.com/moolicc/hourglass"&gt;github&lt;/a&gt;.
 So please, go poke around, have some fun, and let me know how it goes!&lt;/p&gt;
 </content>
 		<summary>&lt;p&gt;Clear your mind of what you've read here from previous posts in this overly long-winded series.

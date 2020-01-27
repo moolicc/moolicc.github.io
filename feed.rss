@@ -5,14 +5,14 @@
 		<link>http://moolick.dev/</link>
 		<description>Moolick's Writings</description>
 		<copyright>2020</copyright>
-		<pubDate>Tue, 21 Jan 2020 20:40:34 GMT</pubDate>
-		<lastBuildDate>Tue, 21 Jan 2020 20:40:34 GMT</lastBuildDate>
+		<pubDate>Mon, 27 Jan 2020 02:55:05 GMT</pubDate>
+		<lastBuildDate>Mon, 27 Jan 2020 02:55:05 GMT</lastBuildDate>
 		<item>
 			<title>Using CAKE To Organize Dependencies</title>
-			<link>http://moolick.dev/blog/using-cake</link>
+			<link>http://moolick.dev/blog/using-cake-to-organize-dependencies</link>
 			<description>&lt;p&gt;During the &lt;em&gt;Great Refactoring&lt;/em&gt; of Wallapp, I encountered a situation that was going to get tedious to solve by-hand.&lt;/p&gt;</description>
 			<enclosure url="http://moolick.dev/banner.jpg" length="0" type="image" />
-			<guid>http://moolick.dev/blog/using-cake</guid>
+			<guid>http://moolick.dev/blog/using-cake-to-organize-dependencies</guid>
 			<pubDate>Tue, 21 Jan 2020 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;h1 id="use-case"&gt;Use-case&lt;/h1&gt;
 &lt;p&gt;During the &lt;em&gt;Great Refactoring&lt;/em&gt; of Wallapp, I encountered a situation that was going to get tedious to solve by-hand.&lt;/p&gt;
@@ -415,10 +415,8 @@ without them being aware. &lt;em&gt;We'll unfortunately have to do this until th
 &lt;h4 id="destroying-an-entity"&gt;Destroying an entity&lt;/h4&gt;
 &lt;p&gt;Next up, we should take a look at the case where a caller might be a monster and desire the destruction of an entity.
 So I guess we should also include a method of the removal of entities.&lt;/p&gt;
-&lt;aside&gt;Remember, Simba&lt;/aside&gt;
-&lt;p&gt;\&lt;/p&gt;
 &lt;blockquote class="blockquote"&gt;
-&lt;p&gt;: I actually forgot to implement this until writing this post. Before this time, entities overpopulated the world, causing mass-chaos.&lt;/p&gt;
+&lt;p&gt;I actually forgot to implement this until writing this post. Before this time, entities overpopulated the world, causing mass-chaos.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;pre&gt;&lt;code class="language-cs"&gt;public void DestroyEntity(int entityId)
 {
@@ -602,7 +600,7 @@ I've included plenty of overloads to make the life of a consumer of this API eas
 &lt;p&gt;Whew! After nearly a year, I've finally gotten around to completing an ECS and writing about it.
 The Entity Component System is a fantastic tool to have on your belt, and honestly it's a joy to work with.
 Writing one up can be kind of boiler-plate, but I find it fun to try and make it unique and at least some-what performance friendly.&lt;/p&gt;
-&lt;p&gt;I've thrown the full code up on my &lt;a href="https://github.com/jmikew/hourglass"&gt;github&lt;/a&gt;.
+&lt;p&gt;I've thrown the full code up on my &lt;a href="https://github.com/moolicc/hourglass"&gt;github&lt;/a&gt;.
 So please, go poke around, have some fun, and let me know how it goes!&lt;/p&gt;
 </content:encoded>
 		</item>

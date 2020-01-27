@@ -256,10 +256,8 @@ without them being aware. <em>We'll unfortunately have to do this until the mach
 <h4 id="destroying-an-entity">Destroying an entity</h4>
 <p>Next up, we should take a look at the case where a caller might be a monster and desire the destruction of an entity.
 So I guess we should also include a method of the removal of entities.</p>
-<aside>Remember, Simba</aside>
-<p>\</p>
 <blockquote class="blockquote">
-<p>: I actually forgot to implement this until writing this post. Before this time, entities overpopulated the world, causing mass-chaos.</p>
+<p>I actually forgot to implement this until writing this post. Before this time, entities overpopulated the world, causing mass-chaos.</p>
 </blockquote>
 <pre><code class="language-cs">public void DestroyEntity(int entityId)
 {
@@ -443,7 +441,7 @@ I've included plenty of overloads to make the life of a consumer of this API eas
 <p>Whew! After nearly a year, I've finally gotten around to completing an ECS and writing about it.
 The Entity Component System is a fantastic tool to have on your belt, and honestly it's a joy to work with.
 Writing one up can be kind of boiler-plate, but I find it fun to try and make it unique and at least some-what performance friendly.</p>
-<p>I've thrown the full code up on my <a href="https://github.com/jmikew/hourglass">github</a>.
+<p>I've thrown the full code up on my <a href="https://github.com/moolicc/hourglass">github</a>.
 So please, go poke around, have some fun, and let me know how it goes!</p>
 
 
