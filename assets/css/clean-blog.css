@@ -20,11 +20,11 @@ body {
     font-weight: 800;
   }
   a {
-    color: #333333;
+    color: #AA3434;
   }
   a:hover,
   a:focus {
-    color: #337ab7;
+    color: #700000;
   }
   a img:hover,
   a img:focus {
@@ -421,4 +421,65 @@ body {
   
     blockquote *:last-child {
       margin-bottom: 0;
+    }
+
+
+    .postrect a {
+      font-family: cursive;
+      text-decoration: none;
+      color: #333333;
+    }
+    .postrect a:hover {
+      font-family: cursive;
+      text-decoration: none;
+      color: #700000;
+    }
+    .postrect a:focus {
+      font-family: cursive;
+      text-decoration: none;
+      color: #700000;
+    }
+    .recentpost-title {
+      margin-bottom: 0em;
+    }
+
+    .recentpost-date {
+      margin-top: 0.5em;
+      margin-bottom: 1em;
+      font-size: 0.8em;
+      font-style: italic;
+    }
+
+    .recentpost-body {
+      margin-top: 1em;
+      margin-bottom: 0em;
+      font-size: 16px;
+      font-family: 'Lora', 'Times New Roman', serif;
+    }
+
+    .projectslist {
+      list-style-type: none;
+    }
+
+    .projectslist-link {
+      font-size: 1.2em;
+      text-decoration: underline;
+      margin-bottom: 0em;
+      font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .projectslist p {
+      margin-top:0.1em;
+      margin-left: 2%;
+      margin-bottom: 0em;
+      font-size: 0.9em;
+      font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .projectslist-tag-link {
+      margin-bottom: 0em;
+      margin-left: 2%;
+      font-size: 0.8em;
+      font-style: italic;
+      font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
