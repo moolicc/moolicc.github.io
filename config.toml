@@ -1,0 +1,34 @@
+base_url = "https://moolicc.github.io/"
+compile_sass = true
+build_search_index = true
+generate_feed = true
+feed_filename = "rss.xml"
+theme = "Zulma"
+taxonomies = [
+    { name = "projects" },
+]
+
+[markdown]
+highlight_code = true
+render_emoji = true
+smart_punctuation = true
+
+[slugify]
+paths = "on"
+taxonomies = "on"
+anchors = "on"
+
+[search]
+include_title = true
+include_description = true
+include_path = true
+include_content = false
+
+[extra]
+zulma_menu = [
+    {url = "$BASE_URL/categories", name = "Categories"},
+    {url = "$BASE_URL/tags", name = "Tags"},
+    {url = "$BASE_URL/authors", name = "Authors"}
+]
+
+zulma_theme = "darkly"
