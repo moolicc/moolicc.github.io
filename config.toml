@@ -4,14 +4,17 @@ build_search_index = true
 generate_feed = true
 feed_filename = "rss.xml"
 theme = "Zulma"
+paginate_by = 5
 taxonomies = [
     { name = "projects" },
+    { name = "tags", rss = true, paginate_by = 5 },
 ]
 
 [markdown]
 highlight_code = true
 render_emoji = true
 smart_punctuation = true
+highlight_theme = "base16-ocean-dark"
 
 [slugify]
 paths = "on"
@@ -26,9 +29,9 @@ include_content = false
 
 [extra]
 zulma_menu = [
-    {url = "$BASE_URL/categories", name = "Categories"},
-    {url = "$BASE_URL/tags", name = "Tags"},
-    {url = "$BASE_URL/authors", name = "Authors"}
+    { url = "$BASE_URLprojects", name = "Projects" },
+    { url = "$BASE_URLtags", name = "Tags" },
 ]
-
-zulma_theme = "darkly"
+zulma_brand = { text = "Home" }
+zulma_theme = "lux"
+zulma_allow_theme_selection = false
