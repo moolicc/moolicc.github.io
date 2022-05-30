@@ -1,0 +1,9 @@
+
+{% if small %}
+{% set size = "small" %}
+{% else %}
+{% set size = "large" %}
+{% endif %}
+
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/{{ user }}/{{ repo }}/archive/HEAD.zip" data-icon="octicon-download" data-size="{{ size }}" aria-label="Download ntkme/github-buttons on GitHub">Download</a>

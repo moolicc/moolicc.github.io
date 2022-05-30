@@ -22,10 +22,32 @@
 
 
 {% macro project(page) %}
-<a class="title" href="{{ page.extra.link }}">
+<a href="https://github.com/{{ page.extra.user }}/{{ page.extra.repo }}/">
     <span class="title article-title">{{ page.title }}</span>
 </a>
 <div class="content">
-    <span>{{ page.content | safe }}</span>
+    {{ self::ghstar(user = page.extra.user, repo = page.extra.repo) }}
+    {{ self::ghwatch(user = page.extra.user, repo = page.extra.repo) }}
+    {{ self::ghfork(user = page.extra.user, repo = page.extra.repo) }}
+    {{ self::ghdownload(user = page.extra.user, repo = page.extra.repo) }}
+    <p>{{ page.content | safe }}</p>
 </div>
+<hr>
+{% endmacro %}
+
+{% macro ghstar(user, repo) %}
+<iframe src="https://ghbtns.com/github-btn.html?user={{ user }}&repo={{ repo }}&type=star&count=true" style="width: 130px; height: 20px;" frameborder="0" scrolling="0" title="GitHub"></iframe>
+{% endmacro %}
+
+{% macro ghwatch(user, repo) %}
+<iframe src="https://ghbtns.com/github-btn.html?user={{ user }}&repo={{ repo }}&type=watch&count=true&v=2" style="width: 130px; height: 20px;" frameborder="0" scrolling="0" title="GitHub"></iframe>
+{% endmacro %}
+
+{% macro ghfork(user, repo) %}
+<iframe src="https://ghbtns.com/github-btn.html?user={{ user }}&repo={{ repo }}&type=fork&count=true" style="width: 130px; height: 20px;" frameborder="0" scrolling="0" title="GitHub"></iframe>
+{% endmacro %}
+
+{% macro ghdownload(user, repo) %}
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/{{ user }}/{{ repo }}/archive/HEAD.zip" data-icon="octicon-download" aria-label="Download">Download</a>
 {% endmacro %}

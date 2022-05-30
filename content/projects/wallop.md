@@ -4,6 +4,8 @@ description = "Wallpaper Engine"
 
 [extra]
 link = "https://github.com/moolicc/Wallop"
+user = "moolicc"
+repo = "wallop"
 +++
 
-Wallpaper engine
+Wallpaper Engine
