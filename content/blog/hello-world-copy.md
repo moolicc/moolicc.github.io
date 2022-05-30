@@ -4,7 +4,7 @@ date = 2021-05-29
 description = "Introduction post as I narrow down my site"
 
 [taxonomies]
-tags = [ "Hello", "test" ]
+tags = [ "Hello" ]
 +++
 
 # Hello
