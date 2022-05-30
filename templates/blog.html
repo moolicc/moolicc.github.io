@@ -1,2 +1,4 @@
 {% extends "Zulma/templates/index.html" %}
+{% import "index_macros.html" as index_macros %}
 
+{{ index_macros::hero(title="All Posts",primary=false) }}

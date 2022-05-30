@@ -5,6 +5,7 @@ description = "Introduction post as I narrow down my site"
 
 [taxonomies]
 tags = [ "Hello" ]
+project-tags = [ "Wallop" ]
 +++
 
 # Hello

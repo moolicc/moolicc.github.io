@@ -1,8 +1,18 @@
 {% extends "Zulma/templates/taxonomy_list.html" %}
 {% import "projects/project_macros.html" as project_macros %}
+{% import "index_macros.html" as index_macros %}
 
 {% block main %}
 
-{{ project_macros::list_projects(pages=section.pages) }}
+{{ index_macros::hero(title="All Projects",primary=false) }}
+
+<div class="container">
+    <div class="columns">
+        <div class="column is-8 is-offset-2">
+            {{ project_macros::list_projects(pages=section.pages) }}
+        </div>
+    </div>
+</div>
+
 
 {% endblock main %}

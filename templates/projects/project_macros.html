@@ -23,7 +23,7 @@
 
 {% macro project(page) %}
 <a href="https://github.com/{{ page.extra.user }}/{{ page.extra.repo }}/">
-    <span class="title article-title">{{ page.title }}</span>
+    <span class="title article-title is-link"><u>{{ page.title }}</u></span>
 </a>
 <div class="content">
     {{ self::ghstar(user = page.extra.user, repo = page.extra.repo) }}
@@ -50,4 +50,10 @@
 {% macro ghdownload(user, repo) %}
 <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/{{ user }}/{{ repo }}/archive/HEAD.zip" data-icon="octicon-download" aria-label="Download">Download</a>
+{% endmacro %}
+
+{% macro ghreadme(user, repo, branch, file) %}
+
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2F{{ user }}%2F{{ repo }}%2Fblob%2F{{ branch }}%2F{{ file | safe }}&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+
 {% endmacro %}

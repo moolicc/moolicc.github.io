@@ -5,6 +5,7 @@ description = "Introduction post as I narrow down my site"
 
 [taxonomies]
 tags = [ "Hello", "test" ]
+project-tags = [ "Waterlogged" ]
 +++
 
 Suppose you call your friend for some help and at that time he is busy with some work. He told you that he will callback you after some time. This process is called callback and when it comes to programming, the process of calling back a function from another function is called callback.
@@ -200,5 +201,7 @@ Let’s suppose that you want to implement a feature in which a function greet h
 
 Generally, to implement the above scenario we have to write 2 different functions. Both of the function contains some code that will be similar in it. To overcome this problem, we are using callback function so that no function contains duplicate code. And the implementation can be seen from the above example.
 Conclusion
+
+# test
 
 Callback function in c programming means that we want to call a different function from another function. This will help us to write clean and non-duplicate code. The callback method is very useful when we want to use a function in another function and avoid the rewriting of the same function.

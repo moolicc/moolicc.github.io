@@ -1,0 +1,22 @@
+{% extends "Zulma/templates/index.html" %}
+{% import "projects/project_macros.html" as project_macros %}
+{% import "index_macros.html" as index_macros %}
+
+{% block main %}
+
+{{ index_macros::hero(title=page.title,primary=false) }}
+
+<div class="container">
+    <div class="columns">
+        <div class="column is-8 is-offset-2">
+            {{ project_macros::project(page=page) }}
+
+            <span id="readme-contents"></span>
+
+            {{ project_macros::ghreadme(user=page.extra.user, repo=page.extra.repo, branch=page.extra.branch, file="readme.md")}}
+        </div>
+    </div>
+</div>
+
+
+{% endblock main %}
