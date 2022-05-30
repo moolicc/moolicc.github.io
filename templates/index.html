@@ -2,6 +2,37 @@
 
 {% block main %}
 
+<div class="column is-10-desktop is-offset-1-desktop">
+    <div class="card article">
+        <div class="card-content">
+            <header>
+                <div class="has-text-centered">
+                    <p class="title article-title">Welcome to my corner on the internet!</p>
+                </div>
+            </header>
+            <div class="content article-body has-text-centered">
 
+                <ul>
+                    <li>
+                        Visit my <a href="{{ get_url(path="/blog") }}">Blog</a>, where I document my adventures
+                    </li>
+                    <li>
+                        View my list of <a href="{{ get_url(path="/projects") }}">Projects</a>, where I jot-down my current endeavors
+                    </li>
+                </ul>
+
+                <hr>
+
+                <ul>
+                    <li>
+                        Take a look at my sad, lonely <a href="https://github.com/moolicc">GitHub</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+</div>
 
 {% endblock main %}
