@@ -25,6 +25,8 @@ anchors = "on"
 [extra]
 zulma_menu = [
     { url = "$BASE_URLprojects", name = "Projects" },
+    { sep = true },
+    { url = "$BASE_URLblog", name = "All Posts" },
     { url = "$BASE_URLtags", name = "Tags" },
 ]
 zulma_brand = { text = "Home" }

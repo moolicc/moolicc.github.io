@@ -77,6 +77,11 @@
                 <div class="navbar-end">
                     {% if config.extra.zulma_menu %}
                     {% for item in config.extra.zulma_menu %}
+
+                    {% if item.sep %}
+                    <span class="navbar-item"> | </span>
+                    {% else %}
+
                     {% set item_url =  item.url | replace(from="$BASE_URL", to=config.base_url) %}
                     {% set item_url = item_url ~ "/" %}
                     <a itemprop="url"
@@ -85,6 +90,10 @@
                         <span itemprop="name">{{ item.name }}
                         </span>
                     </a>
+
+                    {% endif %}
+
+                    
                     {% endfor %}
                     {% endif %}
 
