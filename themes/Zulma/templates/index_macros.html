@@ -18,8 +18,17 @@
 <section class="articles">
     <div class="columns is-desktop">
         <div class="column is-10-desktop is-offset-1-desktop">
-            {% for page in pages %}
-            {{ post_macros::page_in_list(page=page) }}
+            {% for year, posts in pages | group_by(attribute="year") %}
+
+            <div>
+                <hr>
+                <p class="title">{{ year }}</p>
+            </div>
+
+            {% for post in posts %}
+            {{ post_macros::page_in_list(page=post) }}
+            {% endfor %}
+
             {% endfor %}
         </div>
     </div>
