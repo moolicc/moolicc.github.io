@@ -1,0 +1,9 @@
+{% extends "Zulma/templates/taxonomy_list.html" %}
+{% import "projects/project_macros.html" as project_macros %}
+
+{% block main %}
+
+<p>Hi</p>
+{{ project_macros::list_projects(pages=section.pages) }}
+
+{% endblock main %}

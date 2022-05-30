@@ -9,6 +9,7 @@
 {% endblock header %}
 <!-- END NAV -->
 <main>
+    {% block main %}
     <!-- START HERO TITLE -->
     {% if not title %}
     {% set title = "All " ~ taxonomy.name | title %}
@@ -18,5 +19,6 @@
     <!-- START TAXONOMY LIST -->
     {{ taxonomy_macros::list(terms=terms) }}
     <!-- END TAXONOMY LIST -->
+    {% endblock main %}
 </main>
 {% endblock content %}

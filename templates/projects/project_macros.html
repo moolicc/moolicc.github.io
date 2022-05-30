@@ -1,0 +1,31 @@
+
+{% macro list_projects(pages) %}
+<section class="articles">
+    <div class="columns is-desktop">
+        <div class="column is-10-desktop is-offset-1-desktop">
+
+            <article itemscope itemtype="http://schema.org/CreativeWork">
+                <div class="card article">
+                    <div class="card-content">
+                        {% for page in pages %}
+            
+                        {{ self::project(page=page) }}
+            
+                        {% endfor %}
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+{% endmacro list_projects %}
+
+
+{% macro project(page) %}
+<a class="title" href="{{ page.extra.link }}">
+    <span class="title article-title">{{ page.title }}</span>
+</a>
+<div class="content">
+    <span>{{ page.content | safe }}</span>
+</div>
+{% endmacro %}
