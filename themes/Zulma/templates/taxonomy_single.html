@@ -18,6 +18,20 @@
     <!-- END HERO TITLE -->
     <div class="container">
         {% block main %}
+        
+        <!-- START ARTICLE FEED -->
+        {% if paginator %}
+        {{ index_macros::list_articles(pages=paginator.pages) }}
+        {% else %}
+        {{ index_macros::list_articles(pages=term.pages) }}
+        {% endif %}
+        <!-- END ARTICLE FEED -->
+        <!-- START PAGINATION -->
+        {% if paginator %}
+        {{ index_macros::paginate(paginator=paginator) }}
+        {% endif %}
+        <!-- END PAGINATION -->
+        
         {% endblock main %}
     </div>
 </main>
