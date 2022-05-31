@@ -1,6 +1,6 @@
 +++
 title = "Testing two"
-date = 2022-05-29
+date = 2022-05-28
 description = "Introduction post as I narrow down my site"
 
 [taxonomies]
@@ -15,7 +15,7 @@ To understand this let us suppose there is a function A doing some work, and the
 Calling of function from a function is done by using function pointers. Function pointers are pointers that hold the address of execution of another function.
 
 We will see some examples to better understand this.
-Example 1:
+# Example 1:
 ```c,linenos
 #include <stdio.h>
 #include <stdlib.h>
@@ -75,7 +75,7 @@ int main() {
 }
 ```
 
-Output:
+## Output:
 ```
 PS C : \ Users \ ASUS \ Desktop \ Crazy Programmer Work > cd " c : \ Users \ ASUS \ Desktop \ Crazy Programmer Work \ " ; if ( $? ) { gcc test.c -o test } ; if ($?) { . \ test }
 I am in Function 2
@@ -94,7 +94,7 @@ Here we can see that in function 2, first we are printing some statements and th
 We can use callback methods for writing some efficient programs.
 
 Now let’s see another example where we are going to see some functions and how we are calling another function in that function and we will see how the callback method helps us in writing a smaller number of codes for the same problem statements.
-Example 2:
+# Example 2:
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -173,7 +173,7 @@ int main() {
 }
  ```
 
-Output:
+## Output:
 ```
 PS C : \ Users \ ASUS \ Desktop \ Crazy Programmer Work > cd " c : \ Users \ ASUS \ Desktop \ Crazy Programmer Work \ " ; if ( $? ) { gcc test.c -o test } ; if ($?) { . \ test }
 Hello from Crazy Programmer

@@ -40,7 +40,31 @@
             <span class="tag is-rounded">{{ self::read_time(page=page) }}</span>
 
         </div>
-        <a style="text-decoration: underline">Contents</a>
+        <a id="toc-anchor-{{ page.date }}" pageId="{{ page.date | safe }}" onmouseleave="tocButtonLeave('{{ page.date | safe }}', event)" onclick="tocButtonClick('{{ page.date | safe }}')"><i class="fa-solid fa-list"></i></a>
+        <div class="toc-container">
+            <div class="toc-menu" id="toc-div-{{ page.date | safe }}" pageId="{{ page.date | safe }}" onmouseleave="tocMenuLeave('{{ page.date | safe }}')">
+
+                <ul class="toc-list-level1">
+                    {% for h1 in page.toc %}
+                    <li class="toc-list-level1-item">
+                        <a class="toc-link" href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+
+                        {% if h1.children %}
+                        <ul class="toc-list-level2">
+                            {% for h2 in h1.children %}
+                            <li class="toc-list-level2-item">
+                                <a class="toc-link" href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+
+                    </li>
+                    {% endfor %}
+                </ul>
+                
+            </div>
+        </div>
     </div>
 </header>
 {% endmacro article_header %}
