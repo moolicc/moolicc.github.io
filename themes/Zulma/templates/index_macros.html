@@ -18,16 +18,22 @@
 <section class="articles">
     <div class="columns is-desktop">
         <div class="column is-10-desktop is-offset-1-desktop">
+            {% set postCount = 0 %}
             {% for year, posts in pages | group_by(attribute="year") %}
 
             <div>
-                <hr>
                 <p class="title">{{ year }}</p>
             </div>
 
             {% for post in posts %}
+            {% set_global postCount = postCount + 1 %}
             {{ post_macros::page_in_list(page=post) }}
             {% endfor %}
+
+            
+            {% if postCount != pages | length %}
+            <hr>
+            {% endif %}
 
             {% endfor %}
         </div>
