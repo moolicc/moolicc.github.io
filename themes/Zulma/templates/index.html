@@ -70,9 +70,13 @@
     <!-- END NAV -->
     <main class="index">
         <!-- START HERO TITLE -->
+        {% block hero %}
+
         {% if config.extra.zulma_title %}
         {{ index_macros::hero(title=config.extra.zulma_title, primary=true) }}
         {% endif %}
+        
+        {% endblock hero %}
         <!-- END HERO TITLE -->
 
         <div class="container">

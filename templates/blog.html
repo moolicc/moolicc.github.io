@@ -1,4 +1,8 @@
 {% extends "Zulma/templates/index.html" %}
 {% import "index_macros.html" as index_macros %}
 
+{% block hero %}
+
 {{ index_macros::hero(title="All Posts",primary=false) }}
+
+{% endblock hero %}
