@@ -1,7 +1,5 @@
-
-.zola-anchor {
-    display: none;
-}
+@import "./toc.scss";
+@import "./markdown.scss";
 
 a .article-title:hover {
     text-decoration: underline;

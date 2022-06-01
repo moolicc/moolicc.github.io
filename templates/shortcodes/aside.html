@@ -1,0 +1,42 @@
+
+{% if not icon %}
+{% set icon = "exclamation" %}
+{% endif %}
+
+{% if icon == "question" %}
+{% set iconclass = 'fa-solid fa-question' %}
+{% set class="aside-question" %}
+{% endif %}
+
+
+{% if icon == "lightbulb" %}
+{% set iconclass = 'fa-solid fa-lightbulb' %}
+{% set class="aside-lightbulb" %}
+{% endif %}
+
+{% if icon == "exclamation" %}
+{% set iconclass = 'fa-solid fa-circle-exclamation' %}
+{% set class="aside-exclamation" %}
+{% endif %}
+
+{% if icon == "warning" %}
+{% set iconclass = 'fa-solid fa-triangle-exclamation' %}
+{% set class="aside-warning" %}
+{% endif %}
+
+{% if icon == "bug" %}
+{% set iconclass = 'fa-solid fa-bug' %}
+{% set class="aside-bug" %}
+{% endif %}
+
+<blockquote class="{{ class }}">
+    <i class="{{ iconclass }} aside-icon"></i>
+    {% if caption %}
+    <span class="aside-caption">{{ caption }}</span>
+    <p>{{ body }}</p>
+    {% else %}
+    <span>{{ body }}</span>
+    {% endif %}
+
+    
+</blockquote>
