@@ -153,6 +153,6 @@ X^2^
     this is test
 {% end %}
 
-{% aside(icon="bug", caption="Uh! oh!") %}
+{% aside(icon="bug") %}
     this is test
 {% end %}
