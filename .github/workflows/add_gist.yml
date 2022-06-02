@@ -48,11 +48,11 @@ jobs:
             var fileFound = false;
             var fileUrl = "";
             for(let gist of response.data) {
-              
-              console.log(gist.files);
+          
               if(gist.description == desc) {
-                for(var file in gist.files) {
-                  if(file == target) {
+                for(let i = 0; i < gist.files.length; i++) {
+                  console.log(gist.files[i]);
+                  if(gist.files[i].filename == target) {
                     fileFound = true;
                     fileUrl = file["raw_url"];
                   }
