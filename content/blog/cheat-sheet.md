@@ -3,6 +3,8 @@ title = "Cheat Sheet"
 date = 2022-05-31
 description = "Markdown Cheat Sheet for testing use"
 
+updated = 2022-06-01
+
 [taxonomies]
 tags = [ "test" ]
 +++

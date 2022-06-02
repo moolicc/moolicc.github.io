@@ -95,7 +95,7 @@
         <div class="columns is-multiline">
             <div class="column is-12">
                 <p>
-                    Published
+                    
                     {{self::post_footer_date(page=page)}}
                     {{self::post_footer_authors(page=page)}}
                     {{self::post_footer_categories(page=page)}}
@@ -111,9 +111,17 @@
 
 {% macro post_footer_date(page) %}
 {% if page.date %}
+Published
 <time datetime="{{ page.date | date(format="%F") }}">
     {{ page.date | date(format="%F") }}
 </time>
+{% endif %}
+{% if page.updated %}
+(Updated
+<time datetime="{{ page.updated | date(format="%F") }}">
+    {{ page.date | date(format="%F") | trim }}
+</time>
+)
 {% endif %}
 {% endmacro post_footer_date %}
 
