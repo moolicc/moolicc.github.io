@@ -36,10 +36,14 @@ jobs:
             const response = await axios(`https://api.github.com/users/${owner}/gists`);
             
             console.log("Response gotten");
+            console.log(desc);
             
             for(var gist in response) {
               if(gist.description == desc) {
                 console.log("YEP");
+              }
+              else {
+                console.log(gist.description);
               }
             }
             
