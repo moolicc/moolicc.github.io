@@ -43,6 +43,8 @@ jobs:
               
               if(gist.description == desc) {
                 for(let file in gist.files) {
+                  console.log(file);
+                  console.log(target);
                   if(file.filename == target) {
                     fileFound = true;
                     fileUrl = file.raw_url;
