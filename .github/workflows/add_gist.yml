@@ -49,8 +49,9 @@ jobs:
             var fileUrl = "";
             for(let gist of response.data) {
               
+              console.log(gist.files);
               if(gist.description == desc) {
-                for(let file of gist.files) {
+                for(var file in gist.files) {
                   if(file == target) {
                     fileFound = true;
                     fileUrl = file["raw_url"];
