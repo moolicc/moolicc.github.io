@@ -72,5 +72,7 @@ jobs:
 
             fs.writeFile(`content/blog/${target}`, contents.data);
             
-            console.log(fs.readFileSync(`content/blog/${target}`, 'utf8'));
+            console.log(fs.readFileSync(`content/blog/${target}`, 'utf8', err => {
+              console.error(err);
+            }));
             
