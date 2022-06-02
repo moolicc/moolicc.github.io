@@ -68,11 +68,20 @@ jobs:
             }
             console.log(`File found. Url: '${fileUrl}'`);
             
+            console.log("Downloading file contents...");
             var contents = await axios(fileUrl);
+            if(contents.status != 200) {
+              core.setFailed("Failed to download contents of file.");
+            }
+            console.log(`Contents downloaded. Length: ${contents.data.length} bytes`);
 
-            fs.writeFile(`content/blog/${target}`, contents.data);
+            var localFile = `content/blog/${target}`;
             
-            console.log(fs.readFileSync(`content/blog/${target}`, 'utf8', err => {
+            console.log(`Writing post markdown file '${localFile}'`...);
+            fs.writeFile(localFile, contents.data, function(e) => { });
+            console.log("File written.");
+            
+            console.log(fs.readFileSync(`content/blog/${target}`, 'utf8', function(err) {
               console.error(err);
             }));
             
