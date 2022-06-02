@@ -50,7 +50,9 @@ jobs:
             for(let gist of response.data) {
           
               if(gist.description == desc) {
-                for(let i = 0; i < gist.files.length; i++) {
+                console.log(gist.files.length);
+                console.log(gist.files[0]);
+                for(var i = 0; i < gist.files.length; i++) {
                   console.log(gist.files[i]);
                   if(gist.files[i].filename == target) {
                     fileFound = true;
