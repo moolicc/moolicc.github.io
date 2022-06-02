@@ -35,20 +35,25 @@ jobs:
             const desc = '${{ env.GIST_DESC_TARGET }}'
             const target = '${{ github.event.inputs.filename }}'
             
+            console.log("Downloading gist information...");
             const response = await axios(`https://api.github.com/users/${owner}/gists`);
-            console.log(response.data);
+            
+            if(response.status != 200) {
+              core.setFailed(`Failed to receive gist information.`);
+            }
+            console.log("Gist information received.");
+            
+            
+            console.log("Searching for file in gist...");
             var fileFound = false;
             var fileUrl = "";
             for(let gist of response.data) {
               
               if(gist.description == desc) {
-                console.log('===========');
-                console.log(gist.files);
-                console.log('===========');
                 for(let file in gist.files) {
                   if(file == target) {
                     fileFound = true;
-                    fileUrl = file.raw_url;
+                    fileUrl = file["raw_url"];
                   }
                 }
                 break;
@@ -59,9 +64,11 @@ jobs:
             if(!fileFound) {
               core.setFailed(`Failed to find file ${target}.`);
             }
+            console.log(`File found. Url: '${fileUrl}'`);
             
             var contents = await axios(fileUrl);
-            console.log(fileUrl);
+
             fs.writeFile(`content/blog/${target}`, contents.data);
+            
             console.log(fs.readFileSync(`content/blog/${target}`, 'utf8'));
             
