@@ -4,7 +4,7 @@ name: Add gist post
 on:
   workflow_dispatch:
     inputs:
-      file-name:
+      filename:
         description: 'Name of the gist file'     
         required: true
 
@@ -28,27 +28,41 @@ jobs:
           script: |
             const core = require('@actions/core');
             const axios = require('axios');
-            console.log("dgfsdg");
+            var fs = require('fs');
+            var path = require('path');
             
-            var owner = '${{ env.GIST_OWNER }}'
-            var desc = '${{ env.GIST_DESC_TARGET }}'
-            console.log(`Awaiting response from https://api.github.com/users/${owner}/gists`);
+            const owner = '${{ env.GIST_OWNER }}'
+            const desc = '${{ env.GIST_DESC_TARGET }}'
+            const target = '${{ github.event.inputs.filename }}'
+            
             const response = await axios(`https://api.github.com/users/${owner}/gists`);
             
-            console.log("Response gotten");
-            console.log(desc);
-            console.log(response.data);
-            
+            var fileFound = false;
+            var fileUrl = "";
             for(let gist of response.data) {
               
               if(gist.description == desc) {
-                console.log("YEP");
+                for(let file in gist.files) {
+                  if(file.filename == target) {
+                    fileFound = true;
+                    fileUrl = file.raw_url;
+                  }
+                }
+                break;
               }
-              else {
-                console.log(gist["description"]);
-              }
+              
             }
             
-            var url = "";
+            if(!fileFound) {
+              // TODO: Error
+            }
             
-            core.exportVariable('MD_URL', url);
+            if(path.existsSync(`content/blog/${target}`)) {
+            
+            }
+            
+            var contents = await axios(fileUrl);
+            console.log(fileUrl);
+            fs.writeFile(`content/blog/${target}`, contents.data);
+            console.log(fs.readFileSync(`content/blog/${target}`, 'utf8'));
+            
