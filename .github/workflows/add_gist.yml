@@ -37,7 +37,7 @@ jobs:
             
             console.log("Response gotten");
             
-            for(let gist of response) {
+            for(var gist in response) {
               if(gist.description == desc) {
                 console.log("YEP");
               }
