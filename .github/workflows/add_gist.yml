@@ -26,6 +26,7 @@ jobs:
         with:
           required-packages: axios
           script: |
+            console.log("================ Executing ================");
             const core = require('@actions/core');
             const axios = require('axios');
             var fs = require('fs');
@@ -82,4 +83,4 @@ jobs:
             console.log("File written.");
             
             console.log(fs.readFileSync(`content/blog/${target}`, 'utf8'));
-            
+            console.log("================ End of script ================");
