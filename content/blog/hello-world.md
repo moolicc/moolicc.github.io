@@ -1,17 +1,10 @@
 +++
-title = "Hello, World!"
-date = 2022-05-29
-description = "Introduction post as I narrow down my site"
+title = "test"
+date = 2022-06-02
+description = "A gist test"
 
 [taxonomies]
-tags = [ "Hello", "test" ]
-project-tags = [ "Wallop" ]
+tags = ["test"]
 +++
 
-# Hello
-```cs
-void fn()
-{
-    string s = "Hi";
-}
-```
+# Hello, world!
