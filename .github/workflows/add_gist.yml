@@ -1,5 +1,5 @@
 
-name: CI
+name: Add gist post
 
 on:
   workflow_dispatch:
@@ -7,6 +7,10 @@ on:
       file-name:
         description: 'Name of the gist file'     
         required: true
+
+env:
+  GIST_OWNER: 'moolicc'
+  GIST_DESC_TARGET: 'posts'
 
 jobs:
   post-gist:
@@ -20,13 +24,25 @@ jobs:
         uses: satackey/action-js-inline@release-master
         id: getdata
         with:
+          required-packages: axios
           script: |
             const core = require('@actions/core');
-            var fs = require('fs');
+            const axios = require('axios');
+            console.log("dgfsdg");
             
-            var exists = false;
-            fs.writeFileSync('testout.txt', 'test');
+            var owner = '${{ env.GIST_OWNER }}'
+            var desc = '${{ env.GIST_DESC_TARGET }}'
+            console.log(`Awaiting response from https://api.github.com/users/${owner}/gists`);
+            const response = await axios(`https://api.github.com/users/${owner}/gists`);
             
-      - name: Push
-        uses: actions/push@v3
+            console.log("Response gotten");
             
+            for(let gist of response) {
+              if(gist.description == desc) {
+                console.log("YEP");
+              }
+            }
+            
+            var url = "";
+            
+            core.exportVariable('MD_URL', url);
