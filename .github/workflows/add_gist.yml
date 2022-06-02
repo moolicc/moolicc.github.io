@@ -37,13 +37,15 @@ jobs:
             
             console.log("Response gotten");
             console.log(desc);
+            console.log(response);
             
             for(var gist in response) {
+              
               if(gist.description == desc) {
                 console.log("YEP");
               }
               else {
-                console.log(gist.description);
+                console.log(gist["description"]);
               }
             }
             
