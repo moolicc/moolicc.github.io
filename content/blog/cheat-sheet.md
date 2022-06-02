@@ -156,3 +156,5 @@ X^2^
 {% aside(icon="bug") %}
     this is test
 {% end %}
+
+{{ round_image(path="static/images/me.jpg", width=64, height=64, alt="Test") }}

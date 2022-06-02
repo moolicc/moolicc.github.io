@@ -14,8 +14,11 @@
             <div class="content article-body has-text-centered">
 
 
+                {% set image = resize_image(path="static/images/me.jpg", width=64, height=64) %}
+                <img class="round-image" src="{{ image.url }}" alt="Avatar">
+                <p class="subtitle" style="margin-top: 0px">Hi, I'm moolick!</p>
+
                 <p class="left-align">
-                    Hi, I'm moolick!<br>
                     <i class="fa-solid fa-terminal"></i> I've been coding since 2009; I started in vb.net and Visual Studio 2008. <br>
                     <i class="fa-solid fa-code"></i> I now know and am comfortable with a nice assortment of languages. () <br>
                     <i class="fa-solid fa-computer"></i> I enjoy pretty much all aspects of computers, from front-end development all the way to playing around with systems programming on Arduinos and RaspberryPis.<br>

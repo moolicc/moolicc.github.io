@@ -1,0 +1,14 @@
+{% if not alt %}
+{% set alt = path %}
+{% endif %}
+
+{% if not op %}
+{% set op = "fill" %}
+{% endif %}
+
+{% if not format %}
+{% set format = "auto" %}
+{% endif %}
+
+{% set image = resize_image(path=path, width=width, height=height, op=op) %}
+<img class="round-image" src="{{ image.url }}" alt="{{ alt }}">
