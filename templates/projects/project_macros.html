@@ -26,7 +26,8 @@
     <a href="https://github.com/{{ page.extra.user }}/{{ page.extra.repo }}/">
         <span class="title article-title is-link">{{ page.title }}</span>
     </a>
-    <a href="{{ get_url(path="/project-tags/" ~ page.title) }}"><i>See posts</i></a>
+    {% set lower = page.title | lower %}
+    <a href="{{ get_url(path="/project-tags/" ~ lower) }}"><i>See posts</i></a>
 </p>
 <div class="content">
     {{ self::ghstar(user = page.extra.user, repo = page.extra.repo) }}
