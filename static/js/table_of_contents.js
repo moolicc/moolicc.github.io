@@ -23,9 +23,12 @@ function tocMenuLeave(pageId) {
 }
 
 function showTocMenu(pageId) {
-    document.getElementById(`toc-div-${pageId}`).style.display = "block";
+    //document.getElementById(`toc-div-${pageId}`).style.display = "block";
+    $(document.getElementById(`toc-div-${pageId}`)).slideDown();
 }
 
 function hideTocMenu(pageId) {
-    document.getElementById(`toc-div-${pageId}`).style.display = "none";
+    //document.getElementById(`toc-div-${pageId}`).style.display = "none";
+
+    $(document.getElementById(`toc-div-${pageId}`)).slideUp(200);
 }
