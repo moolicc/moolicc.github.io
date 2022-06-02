@@ -47,16 +47,15 @@ jobs:
             console.log("Searching for file in gist...");
             var fileFound = false;
             var fileUrl = "";
+            
+            var i = -1;
             for(let gist of response.data) {
-          
+              i++;
               if(gist.description == desc) {
-                console.log(gist.files.length);
-                console.log(gist.files[0]);
-                for(var i = 0; i < gist.files.length; i++) {
-                  console.log(gist.files[i]);
-                  if(gist.files[i].filename == target) {
+                for(let file in gist.files) {
+                  if(file == target) {
                     fileFound = true;
-                    fileUrl = file["raw_url"];
+                    fileUrl = response.data[i]["files"][target]["raw_url"];
                   }
                 }
                 break;
