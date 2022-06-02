@@ -22,9 +22,12 @@
 
 
 {% macro project(page) %}
-<a href="https://github.com/{{ page.extra.user }}/{{ page.extra.repo }}/">
-    <span class="title article-title is-link">{{ page.title }}</span>
-</a>
+<p>
+    <a href="https://github.com/{{ page.extra.user }}/{{ page.extra.repo }}/">
+        <span class="title article-title is-link">{{ page.title }}</span>
+    </a>
+    <a href="project-tags/{{ page.title }}"><i>See posts</i></a>
+</p>
 <div class="content">
     {{ self::ghstar(user = page.extra.user, repo = page.extra.repo) }}
     {{ self::ghwatch(user = page.extra.user, repo = page.extra.repo) }}
