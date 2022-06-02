@@ -77,8 +77,8 @@ jobs:
 
             var localFile = `content/blog/${target}`;
             
-            console.log(`Writing post markdown file '${localFile}'`...);
-            fs.writeFile(localFile, contents.data);
+            console.log(`Writing post markdown file '${localFile}'...`);
+            fs.writeFileSync(localFile, contents.data);
             console.log("File written.");
             
             console.log(fs.readFileSync(`content/blog/${target}`, 'utf8'));
