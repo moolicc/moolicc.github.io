@@ -36,13 +36,15 @@ jobs:
             const target = '${{ github.event.inputs.filename }}'
             
             const response = await axios(`https://api.github.com/users/${owner}/gists`);
-            console.log(response);
+            console.log(response.data);
             var fileFound = false;
             var fileUrl = "";
             for(let gist of response.data) {
               
               if(gist.description == desc) {
+                console.log('===========');
                 console.log(gist.files);
+                console.log('===========');
                 for(let file in gist.files) {
                   if(file == target) {
                     fileFound = true;
