@@ -54,11 +54,7 @@ jobs:
             }
             
             if(!fileFound) {
-              // TODO: Error
-            }
-            
-            if(path.existsSync(`content/blog/${target}`)) {
-            
+              core.setFailed(`Failed to find file ${target}.`);
             }
             
             var contents = await axios(fileUrl);
