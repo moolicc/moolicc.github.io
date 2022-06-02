@@ -1,0 +1,32 @@
+
+name: CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      file-name:
+        description: 'Name of the gist file'     
+        required: true
+
+jobs:
+  post-gist:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Bootstrap post from gist
+        uses: satackey/action-js-inline@release-master
+        id: getdata
+        with:
+          script: |
+            const core = require('@actions/core');
+            var fs = require('fs');
+            
+            var exists = false;
+            fs.writeFileSync('testout.txt', 'test');
+            
+      - name: Push
+        uses: actions/push@v3
+            
