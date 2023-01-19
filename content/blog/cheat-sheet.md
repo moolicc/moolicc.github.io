@@ -6,13 +6,16 @@ description = "Markdown Cheat Sheet for testing use"
 updated = 2022-06-01
 
 [taxonomies]
-tags = [ "test" ]
+tags = [ "test", "test2", "test3", "test4" ]
 series = [ "myseries" ]
 
 [extra]
 series_index = 0
 
 +++
+
+Often times we need a simple example document laying out the basics of a thing we're using.
+
 # Markdown Cheat Sheet
 
 Thanks for visiting [The Markdown Guide](https://www.markdownguide.org)!
@@ -147,6 +150,8 @@ X^2^
 {{ gist(url="https://gist.github.com/Keats/e5fb6aad409f28721c0ba14161644c57", class="gist") }}
 
 ## Asides
+
+Here's some text
 {% aside(caption="Uh oh!") %}
     this is test
 {% end %}

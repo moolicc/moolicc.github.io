@@ -1,32 +1,33 @@
 
 {% if not icon %}
 {% set icon = "exclamation" %}
+{% set class="aside" %}
 {% endif %}
 
 {% if icon == "question" %}
 {% set iconclass = 'fa-solid fa-question' %}
-{% set class="aside-question" %}
+{% set class="aside aside-question" %}
 {% endif %}
 
 
 {% if icon == "lightbulb" %}
 {% set iconclass = 'fa-solid fa-lightbulb' %}
-{% set class="aside-lightbulb" %}
+{% set class="aside aside-lightbulb" %}
 {% endif %}
 
 {% if icon == "exclamation" %}
 {% set iconclass = 'fa-solid fa-circle-exclamation' %}
-{% set class="aside-exclamation" %}
+{% set class="aside aside-exclamation" %}
 {% endif %}
 
 {% if icon == "warning" %}
 {% set iconclass = 'fa-solid fa-triangle-exclamation' %}
-{% set class="aside-warning" %}
+{% set class="aside aside-warning" %}
 {% endif %}
 
 {% if icon == "bug" %}
 {% set iconclass = 'fa-solid fa-bug' %}
-{% set class="aside-bug" %}
+{% set class="aside aside-bug" %}
 {% endif %}
 
 <blockquote class="{{ class }}">

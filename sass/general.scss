@@ -29,6 +29,10 @@ article {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.tag:not(body) {
+    font-size: 0.85rem !important;
+}
+
 @media only screen and (max-width: 1087px) {
     .navbar-separator {
         display: none !important
