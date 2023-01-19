@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title> - Wallop</title>
+        <link>https://moolicc.github.io/</link>
+        <description></description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https://moolicc.github.io/project-tags/wallop/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Sat, 29 May 2021 00:00:00 +0000</lastBuildDate>
+        <item>
+            <title>Hello, World - 2!</title>
+            <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
+            <link>https://moolicc.github.io/blog/hello-world-copy/</link>
+            <guid>https://moolicc.github.io/blog/hello-world-copy/</guid>
+            <description>&lt;h1 id=&quot;hello&quot;&gt;Hello&lt;a class=&quot;zola-anchor&quot; href=&quot;#hello&quot; aria-label=&quot;Anchor link for: hello&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;pre data-lang=&quot;cs&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-cs &quot;&gt;&lt;code class=&quot;language-cs&quot; data-lang=&quot;cs&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;void &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;fn&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;string &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;s &lt;&#x2F;span&gt;&lt;span&gt;= &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;Hi&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;;
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+</description>
+        </item>
+    </channel>
+</rss>
