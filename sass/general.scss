@@ -12,3 +12,35 @@ a .article-title:hover {
 .round-image {
     border-radius: 50%;
 }
+
+main {
+    background: #f0f0f0;
+}
+
+body {
+    background: #f0f0f0;
+}
+
+article {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.article {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media only screen and (max-width: 1087px) {
+    .navbar-separator {
+        display: none !important
+    }
+}
+
+@media only screen and (max-width: 1087px) {
+    .article {
+        margin-top: 0px !important;
+    }
+
+    .card-footer {
+        padding: 1.5rem;
+    }
+}
