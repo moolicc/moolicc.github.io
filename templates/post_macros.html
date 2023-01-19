@@ -8,39 +8,11 @@
 {% endmacro read_time %}
 
 {% macro article_header(page) %}
-<header>
-    <div class="has-text-centered">
-        <a href="{{ page.permalink | safe }}">
-            <p class="title article-title">{{ page.title }}
-            </p>
-        </a>
-        <a href="{{ page.permalink | safe }}">
-            <div class="content">
-                <p><i>{{ page.description }}</i></p>
-            </div>
-        </a>
-        <div class="tags has-addons level-item">
-            <span class="tag is-rounded">{{ page.date | date(format="%F") }}</span>
+<header id="post-header-{{ page.date | safe }}">
 
-            {% if page.taxonomies.tags %}
-            <span class="tag is-rounded">
-                    {% for tag in page.taxonomies.tags %}
-                    <a href="{{ get_taxonomy_url(kind="tags", name=tag) | safe }}">
-                        <span>{{ tag }}</span>
-                    </a>
-                    {% if page.taxonomies.tags | length > 1 %}
-                    {% if loop.index != page.taxonomies.tags | length %}
-                    ,&nbsp;
-                    {% endif %}
-                    {% endif %}
-                    {% endfor %}
-            </span>
-            {% endif %}           
-
-            <span class="tag is-rounded">{{ self::read_time(page=page) }}</span>
-
-        </div>
+    <div style="float: left">
         <a id="toc-anchor-{{ page.date }}" pageId="{{ page.date | safe }}" onmouseleave="tocButtonLeave('{{ page.date | safe }}', event)" onclick="tocButtonClick('{{ page.date | safe }}')"><i class="fa-solid fa-list"></i></a>
+            
         <div class="toc-container">
             <div class="toc-menu" id="toc-div-{{ page.date | safe }}" pageId="{{ page.date | safe }}" onmouseleave="tocMenuLeave('{{ page.date | safe }}')">
 
@@ -64,6 +36,54 @@
                 </ul>
                 
             </div>
+        </div>
+    </div>
+
+    <div class="has-text-centered">
+        <a href="{{ page.permalink | safe }}">
+            <p style="margin-top: 0px;">
+                <span class="title article-title">
+                    {{ page.title }}
+                </span>
+
+                {% if page.taxonomies.series %}
+                    {% set series = page.taxonomies.series[0] %}
+                    <a href="{{ get_taxonomy_url(kind="series", name=series) | safe }}">
+                    #{{ page.extra.series_index + 1}} in
+                    <i>{{ series }}</i></a>
+                {% endif %}
+            </p>
+                
+        </a>
+        
+
+        <!-- <a href="{{ page.permalink | safe }}"> -->
+            <div class="content">
+                <i>{{ page.description }}</i>
+            </div>
+        <!-- </a> -->
+        
+
+        <div class="tags has-addons level-item">
+            <span class="tag is-rounded">{{ page.date | date(format="%F") }}</span>
+
+            {% if page.taxonomies.tags %}
+            <span class="tag is-rounded">
+                    {% for tag in page.taxonomies.tags %}
+                    <a href="{{ get_taxonomy_url(kind="tags", name=tag) | safe }}">
+                        <span>{{ tag }}</span>
+                    </a>
+                    {% if page.taxonomies.tags | length > 1 %}
+                    {% if loop.index != page.taxonomies.tags | length %}
+                    ,&nbsp;
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+            </span>
+            {% endif %}           
+
+            <span class="tag is-rounded">{{ self::read_time(page=page) }}</span>
+
         </div>
     </div>
 </header>
@@ -183,8 +203,6 @@ and
 
 {% macro post_footer_buttons(page) %}
 
-
-
 {% if page.taxonomies.series %}
 
 {% set series = page.taxonomies.series[0] %}
@@ -206,31 +224,34 @@ and
     {% endfor %}
 {% endfor %}
 
+{% endif %}
+
 <br />
 <br />
 <div class="is-pulled-right" >
     <ul class="has-text-centered" class="">
+        {% if page.taxonomies.series %}
         <li>
-            <a href="{{ get_taxonomy_url(kind="series", name=series) | safe }}" style="text-decoration: underline;">{{ series }}</a>
+            <a href="{{ get_taxonomy_url(kind="series", name=series) | safe }}" style="text-decoration: underline;">{{ series }} (#{{ myIndex + 1 }})</a>
         </li>
         <li style="padding-bottom:10px">
             <div>
                 {% if prevPost %}
-                <a class="tag is-rounded" style="margin-top: 8px;" href="{{ prevPost.permalink | safe }}" title="{{ prevPost.title }}&#013;{{ prevPost.description }}">Previous</a>
+                <a class="tag is-rounded" style="margin-top: 8px;" href="{{ prevPost.permalink | safe }}" title="{{ prevPost.title }}&#013;{{ prevPost.description }}">Previous (#{{ prevIndex + 1 }})</a>
                 {% endif %}
                 <a class="tag is-rounded" style="margin-top: 8px;" href="{{ get_taxonomy_url(kind="series", name=series) | safe }}">All</a>
                 {% if nextPost %}
-                <a class="tag is-rounded" style="margin-top: 8px;" href="{{ nextPost.permalink | safe }}" title="{{ nextPost.title }}&#013;{{ nextPost.description }}">Next</a>
+                <a class="tag is-rounded" style="margin-top: 8px;" href="{{ nextPost.permalink | safe }}" title="{{ nextPost.title }}&#013;{{ nextPost.description }}">Next (#{{ nextIndex + 1}})</a>
                 {% endif %}
             </div>
         </li>
+        {% endif %}
         <li>
             <a class="button is-info" style="margin-top: 8px" href="/blog">All Posts</a>
         </li>
     </ul>
 </div>
 
-{% endif %}
 
 {% endmacro post_footer_buttons %}
 

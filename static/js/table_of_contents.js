@@ -23,12 +23,14 @@ function tocMenuLeave(pageId) {
 }
 
 function showTocMenu(pageId) {
-    //document.getElementById(`toc-div-${pageId}`).style.display = "block";
-    $(document.getElementById(`toc-div-${pageId}`)).slideDown();
+
+    // Find max height.
+    var maxHeight = $(`#post-header-${pageId}`).height();
+
+    $(`#toc-div-${pageId}`).css('max-height', maxHeight);
+    $(`#toc-div-${pageId}`).slideDown(200);
 }
 
 function hideTocMenu(pageId) {
-    //document.getElementById(`toc-div-${pageId}`).style.display = "none";
-
-    $(document.getElementById(`toc-div-${pageId}`)).slideUp(200);
+    $(`#toc-div-${pageId}`).slideUp(200);
 }

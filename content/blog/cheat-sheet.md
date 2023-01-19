@@ -141,9 +141,12 @@ H~2~O
 X^2^
 
 
+# Testing custom macros (or whatever)
+
+## Gist
 {{ gist(url="https://gist.github.com/Keats/e5fb6aad409f28721c0ba14161644c57", class="gist") }}
 
-
+## Asides
 {% aside(caption="Uh oh!") %}
     this is test
 {% end %}
@@ -164,4 +167,5 @@ X^2^
     this is test
 {% end %}
 
+## Image test
 {{ round_image(path="static/images/me.jpg", width=64, height=64, alt="Test") }}

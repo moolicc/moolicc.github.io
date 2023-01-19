@@ -1,11 +1,13 @@
 
 .toc-container {
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 
 .toc-menu {
+    overflow-y: scroll;
     display: none;
+    position: absolute;
     background-color: #4a4a4a;
     color: white;
     width: fit-content;
