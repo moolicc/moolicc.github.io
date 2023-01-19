@@ -6,6 +6,10 @@ description = "Introduction post as I narrow down my site"
 [taxonomies]
 tags = [ "Hello" ]
 project-tags = [ "Wallop" ]
+series = [ "myseries" ]
+
+[extra]
+series_index = 2
 +++
 
 # Hello

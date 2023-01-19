@@ -8,6 +8,7 @@ paginate_by = 5
 taxonomies = [
     { name = "project-tags", feed = true },
     { name = "tags", rss = true, paginate_by = 5 },
+    { name = "series", feed = false, rss = false, paginate_by = 5 },
 ]
 
 [markdown]

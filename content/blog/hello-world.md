@@ -5,6 +5,10 @@ description = "A gist test"
 
 [taxonomies]
 tags = ["test"]
+series = ["myseries"]
+
+[extra]
+series_index = 1
 +++
 
 # Hello, world!

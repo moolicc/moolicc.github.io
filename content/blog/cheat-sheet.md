@@ -7,6 +7,11 @@ updated = 2022-06-01
 
 [taxonomies]
 tags = [ "test" ]
+series = [ "myseries" ]
+
+[extra]
+series_index = 0
+
 +++
 # Markdown Cheat Sheet
 
